@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace QuanLyBanHang
         public UserProducts()
         {
             InitializeComponent();
+            LoadProduct();
+        }
+
+        void LoadProduct()
+        {
+            dgvProduct.DataSource = ProductsDAO.Instance.ListProduct();
+            dgvProduct.AutoResizeColumns();
         }
     }
 }

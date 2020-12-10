@@ -7,6 +7,7 @@ go
 -- Staff
 -- Account
 -- Product
+-- ProductType
 -- Client
 -- Bill
 -- BillInfo
@@ -36,12 +37,22 @@ create table Account
 go
 
 --------------------------------Tạo bảng Products--------------------------
+create table ProductType
+(
+	productTypeId int identity primary key, -- khóa chính
+	productTypeName nvarchar(100)
+)
+go
+
+--------------------------------Tạo bảng Products--------------------------
 create table Product
 (
 	productId int identity primary key, -- khóa chính
+	productTypeId int,
 	productName nvarchar(100),
 	productPrice float,
-	productType nvarchar(100)
+	
+	foreign key (productTypeId) references ProductType(productTypeId) -- khóa ngoại
 )
 go
 
@@ -83,6 +94,7 @@ create table BillInfo
 )
 go
 
+
 --------------------------------Thêm dữ liệu vào từng bảng--------------------------
 -- Bảng Staff
 insert into Staff 
@@ -103,16 +115,24 @@ go
 insert into Account 
 values (1,'hai001','1', 0) 
 go
+-- Bảng ProductType
+insert into ProductType
+values (N'Laptop') 
+insert into ProductType
+values (N'Điện Thoại') 
+insert into ProductType
+values (N'TiVi') 
+go
 
 -- Bảng Product
 insert into Product 
-values (N'Laptop Asus','15000', 'Laptop') 
+values (1,N'Laptop Asus','15000') 
 insert into Product 
-values (N'Laptop HP','15000', 'Laptop') 
+values (1,N'Laptop HP','15000') 
 insert into Product 
-values (N'Laptop Lenovo','15000', 'Laptop') 
+values (2,N'Điện Thoại Lenovo','15000') 
 insert into Product 
-values (N'Laptop SSI','15000', 'Laptop') 
+values (3,N'TiVi SSI','15000') 
 go
 
 -- Bảng Client
@@ -138,5 +158,34 @@ insert into BillInfo
 values (1,1,1)
 go
 
-SELECT * FROM Account WHERE userName = N'hai001' AND passWord = N'1' 
+
+--------------------------------Tạo PROC để truy suất--------------------------
+-- Truy suất Login
+create proc USP_Login
+@userName nvarchar(100),@passWord  nvarchar(100)
+as
+begin
+	Select * from Account where userName = @userName and passWord = @passWord
+end
+go
+
+-- Truy suất Account
+create proc USP_Account
+as
+begin
+	select userName as N'Tên Tài Khoản', passWord as N'Mật Khẩu', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
+	,address as N'Địa Chỉ', accountType as N'Chức Vụ'
+	from Account, Staff
+	where Account.staffId = Staff.staffId
+end
+go
+
+-- Truy suất Products
+create proc USP_Product
+as
+begin
+	select productName as N'Tên Sản Phẩm', productPrice as N'Giá', productTypeName as N'Loại Sản Phẩm'
+	from Product, ProductType
+	where Product.productTypeId = ProductType.productTypeId
+end
 go

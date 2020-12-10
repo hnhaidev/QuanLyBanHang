@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace QuanLyBanHang
         public UserAccount()
         {
             InitializeComponent();
+            LoadAccount();
+        }
+        void LoadAccount()
+        {
+            dgvAccount.DataSource = AccountDAO.Instance.GetListAccount();
         }
     }
 }

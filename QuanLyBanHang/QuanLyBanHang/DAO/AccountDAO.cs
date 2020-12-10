@@ -20,9 +20,14 @@ namespace QuanLyBanHang.DAO
 
         public bool Login(string userName, string passWord)
         {
-            string query = @"SELECT * FROM Account WHERE userName = N'" + userName + "' AND PassWord = N'" + passWord + "' ";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_Login @userName , @passWord ";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord});
             return result.Rows.Count > 0;
+        }
+
+        public DataTable GetListAccount()
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_Account");
         }
     }
 }

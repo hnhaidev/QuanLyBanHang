@@ -37,9 +37,9 @@ namespace QuanLyBanHang
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbbProduct = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbProductType = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -93,9 +93,9 @@ namespace QuanLyBanHang
             this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.cbbProduct);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.cbbProductType);
             this.panel4.Location = new System.Drawing.Point(326, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(400, 94);
@@ -119,9 +119,19 @@ namespace QuanLyBanHang
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(112, 64);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(41, 21);
             this.numericUpDown1.TabIndex = 16;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label6
             // 
@@ -143,13 +153,14 @@ namespace QuanLyBanHang
             this.label5.TabIndex = 14;
             this.label5.Text = "Product name: ";
             // 
-            // comboBox2
+            // cbbProduct
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(112, 39);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(149, 23);
-            this.comboBox2.TabIndex = 13;
+            this.cbbProduct.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbProduct.FormattingEnabled = true;
+            this.cbbProduct.Location = new System.Drawing.Point(112, 39);
+            this.cbbProduct.Name = "cbbProduct";
+            this.cbbProduct.Size = new System.Drawing.Size(149, 22);
+            this.cbbProduct.TabIndex = 13;
             // 
             // label4
             // 
@@ -161,13 +172,15 @@ namespace QuanLyBanHang
             this.label4.TabIndex = 12;
             this.label4.Text = "Product type: ";
             // 
-            // comboBox1
+            // cbbProductType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 23);
-            this.comboBox1.TabIndex = 0;
+            this.cbbProductType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbProductType.FormattingEnabled = true;
+            this.cbbProductType.Location = new System.Drawing.Point(112, 13);
+            this.cbbProductType.Name = "cbbProductType";
+            this.cbbProductType.Size = new System.Drawing.Size(149, 22);
+            this.cbbProductType.TabIndex = 0;
+            this.cbbProductType.SelectedIndexChanged += new System.EventHandler(this.cbbProductType_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -203,9 +216,10 @@ namespace QuanLyBanHang
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(136, 36);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 21);
+            this.textBox2.Size = new System.Drawing.Size(152, 20);
             this.textBox2.TabIndex = 9;
             // 
             // label2
@@ -220,9 +234,10 @@ namespace QuanLyBanHang
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(136, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 21);
+            this.textBox1.Size = new System.Drawing.Size(103, 20);
             this.textBox1.TabIndex = 7;
             // 
             // label1
@@ -314,9 +329,9 @@ namespace QuanLyBanHang
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbbProduct;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbProductType;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
