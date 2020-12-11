@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace QuanLyBanHang
 {
     public partial class fMain : Form
     {
-        public fMain()
+        private Account loginAccount;
+
+        public Account LoginAccount
         {
+            get { return loginAccount; }
+            set { loginAccount = value;}
+        }
+
+        public fMain(Account account)
+        {
+            this.LoginAccount = account;
             InitializeComponent();
+            txtUserName.Text = LoginAccount.UserName;
         }
 
         private void fMain_Load(object sender, EventArgs e)
@@ -39,8 +50,15 @@ namespace QuanLyBanHang
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            LoadSidePanel(btnAccount);
-            userAccount1.BringToFront();
+            if(loginAccount.AccountType == 0)
+            {
+                LoadSidePanel(btnAccount);
+                userAccount1.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Quản lý mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnShopping_Click(object sender, EventArgs e)

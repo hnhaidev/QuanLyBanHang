@@ -1,4 +1,5 @@
 ﻿using QuanLyBanHang.DAO;
+using QuanLyBanHang.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,8 @@ namespace QuanLyBanHang
             string passWord = txtPassword.Text;
             if (CheckLogin(userName, passWord))
             {
-                fMain f = new fMain();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+                fMain f = new fMain(loginAccount);
                 this.Hide();
                 f.Show();
             }

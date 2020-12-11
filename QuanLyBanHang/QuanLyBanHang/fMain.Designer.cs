@@ -49,17 +49,17 @@ namespace QuanLyBanHang
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnExit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtUserName = new System.Windows.Forms.Label();
-            this.txtTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.userStatistical1 = new QuanLyBanHang.UserStatistical();
             this.userProducts1 = new QuanLyBanHang.UserProducts();
             this.userBill1 = new QuanLyBanHang.UserBill();
             this.userShopping1 = new QuanLyBanHang.UserShopping();
             this.userAccount1 = new QuanLyBanHang.UserAccount();
             this.userHome1 = new QuanLyBanHang.UserHome();
+            this.btnExit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUserName = new System.Windows.Forms.Label();
+            this.txtTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -241,9 +241,9 @@ namespace QuanLyBanHang
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.label4.Location = new System.Drawing.Point(487, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(250, 22);
+            this.label4.Size = new System.Drawing.Size(259, 22);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Cửa Hàng Điện Máy Nguễn Kim";
+            this.label4.Text = "Cửa Hàng Điện Máy Nguyễn Kim";
             // 
             // panel3
             // 
@@ -320,64 +320,6 @@ namespace QuanLyBanHang
             this.panel5.Size = new System.Drawing.Size(743, 433);
             this.panel5.TabIndex = 9;
             // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnExit.CheckedState.BorderThickness = 0;
-            this.btnExit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnExit.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Location = new System.Drawing.Point(920, 16);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(20, 20);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.btnExit.UncheckedState.BorderThickness = 2;
-            this.btnExit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnExit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.btnExit.UncheckedState.Parent = this.btnExit;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(767, 121);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.AutoSize = true;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.txtUserName.Location = new System.Drawing.Point(793, 128);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(61, 12);
-            this.txtUserName.TabIndex = 12;
-            this.txtUserName.Text = "User Name";
-            // 
-            // txtTime
-            // 
-            this.txtTime.AutoSize = true;
-            this.txtTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.txtTime.Location = new System.Drawing.Point(381, 126);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(34, 13);
-            this.txtTime.TabIndex = 13;
-            this.txtTime.Text = "Time";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // userStatistical1
             // 
             this.userStatistical1.Location = new System.Drawing.Point(0, 0);
@@ -419,6 +361,64 @@ namespace QuanLyBanHang
             this.userHome1.Name = "userHome1";
             this.userHome1.Size = new System.Drawing.Size(743, 433);
             this.userHome1.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExit.CheckedState.BorderThickness = 0;
+            this.btnExit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExit.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Location = new System.Drawing.Point(920, 16);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(20, 20);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnExit.UncheckedState.BorderThickness = 2;
+            this.btnExit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.btnExit.UncheckedState.Parent = this.btnExit;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(767, 121);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.AutoSize = true;
+            this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.txtUserName.Location = new System.Drawing.Point(793, 128);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(65, 15);
+            this.txtUserName.TabIndex = 12;
+            this.txtUserName.Text = "User Name";
+            // 
+            // txtTime
+            // 
+            this.txtTime.AutoSize = true;
+            this.txtTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.txtTime.Location = new System.Drawing.Point(381, 126);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(34, 13);
+            this.txtTime.TabIndex = 13;
+            this.txtTime.Text = "Time";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fMain
             // 

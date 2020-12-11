@@ -30,7 +30,7 @@ create table Account
 	staffId int,
 	userName nvarchar(100) primary key,
 	passWord nvarchar(100),
-	accountType bit
+	accountType int
 
 	foreign key (staffId) references Staff(staffId) -- khóa ngoại
 )
@@ -114,6 +114,8 @@ go
 -- Bảng Account
 insert into Account 
 values (1,'hai001','1', 0) 
+insert into Account
+values (2,'admin','admin',1)
 go
 -- Bảng ProductType
 insert into ProductType
@@ -173,7 +175,7 @@ go
 create proc USP_Account
 as
 begin
-	select userName as N'Tên Tài Khoản', passWord as N'Mật Khẩu', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
+	select Staff.staffId as N'Mã Nhân Viên', userName as N'Tên Tài Khoản', passWord as N'Mật Khẩu', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
 	,address as N'Địa Chỉ', accountType as N'Chức Vụ'
 	from Account, Staff
 	where Account.staffId = Staff.staffId
@@ -184,7 +186,7 @@ go
 create proc USP_Product
 as
 begin
-	select productName as N'Tên Sản Phẩm', productPrice as N'Giá', productTypeName as N'Loại Sản Phẩm'
+	select productId as N'Mã Sản Phẩm', productName as N'Tên Sản Phẩm', productPrice as N'Giá', productTypeName as N'Loại Sản Phẩm'
 	from Product, ProductType
 	where Product.productTypeId = ProductType.productTypeId
 end

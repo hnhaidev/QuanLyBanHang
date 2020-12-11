@@ -42,5 +42,13 @@ namespace QuanLyBanHang.DAO
 
             return list;
         }
+
+        public bool InsertProduct(int productId, string productName, string productType, float productPrice)
+        {
+            string query = string.Format("insert Account ( productId , productName , productType , productPrice ) " +
+                "values ( N'{0}' , N'{1}' , N'{2}' , N'{3}' )", productId, productName, productType, productPrice);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }
