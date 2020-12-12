@@ -38,5 +38,17 @@ namespace QuanLyBanHang.DAO
 
             return list;
         }
+        public ProductType GetProductTypeById(int id)
+        {
+            ProductType productType = null;
+            string query = "select * from ProductType where productTypeId = " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                productType = new ProductType(item);
+                return productType;
+            }
+            return productType;
+        }
     }
 }

@@ -117,6 +117,7 @@ namespace QuanLyBanHang
             this.button14.Text = "?";
             this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // btnShopping
             // 

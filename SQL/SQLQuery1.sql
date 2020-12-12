@@ -16,7 +16,7 @@ go
 create table Staff
 (
 	staffId int identity primary key, -- khóa chính
-	staffName nvarchar(100),
+	staffName nvarchar(100) not null,
 	dateOfBirth date,
 	address nvarchar(100),
 	phoneNumber nvarchar(100),
@@ -27,10 +27,10 @@ go
 --------------------------------Tạo bảng Account--------------------------
 create table Account
 (
-	staffId int,
+	staffId int not null,
 	userName nvarchar(100) primary key,
-	passWord nvarchar(100),
-	accountType int
+	passWord nvarchar(100) not null,
+	accountType bit
 
 	foreign key (staffId) references Staff(staffId) -- khóa ngoại
 )
@@ -40,7 +40,7 @@ go
 create table ProductType
 (
 	productTypeId int identity primary key, -- khóa chính
-	productTypeName nvarchar(100)
+	productTypeName nvarchar(100) not null
 )
 go
 
@@ -48,9 +48,10 @@ go
 create table Product
 (
 	productId int identity primary key, -- khóa chính
-	productTypeId int,
-	productName nvarchar(100),
-	productPrice float,
+	productTypeId int not null,
+	productName nvarchar(100) not null,
+	productPrice float not null,
+	productAmount int,
 	
 	foreign key (productTypeId) references ProductType(productTypeId) -- khóa ngoại
 )
@@ -70,8 +71,8 @@ go
 create table Bill
 (
 	billId int identity primary key, -- khóa chính
-	clientId int,
-	staffId int,
+	clientId int not null,
+	staffId int not null,
 	billDate date,
 	sumMoney float
 
@@ -85,8 +86,8 @@ go
 create table BillInfo
 (
 	billInfoId int identity primary key,
-	billId int,
-	productId int,
+	billId int not null,
+	productId int not null,
 	amount int,
 
 	foreign key (billId) references Bill(billId), -- khóa ngoại
@@ -128,13 +129,13 @@ go
 
 -- Bảng Product
 insert into Product 
-values (1,N'Laptop Asus','15000') 
+values (1,N'Laptop Asus','15000',10) 
 insert into Product 
-values (1,N'Laptop HP','15000') 
+values (1,N'Laptop HP','15000',15) 
 insert into Product 
-values (2,N'Điện Thoại Lenovo','15000') 
+values (2,N'Điện Thoại Lenovo','15000',20) 
 insert into Product 
-values (3,N'TiVi SSI','15000') 
+values (3,N'TiVi SSI','15000',25) 
 go
 
 -- Bảng Client
@@ -176,7 +177,7 @@ create proc USP_Account
 as
 begin
 	select Staff.staffId as N'Mã Nhân Viên', userName as N'Tên Tài Khoản', passWord as N'Mật Khẩu', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
-	,address as N'Địa Chỉ', accountType as N'Chức Vụ'
+	,address as N'Địa Chỉ', accountType as N'Quản Lý'
 	from Account, Staff
 	where Account.staffId = Staff.staffId
 end
@@ -186,8 +187,55 @@ go
 create proc USP_Product
 as
 begin
-	select productId as N'Mã Sản Phẩm', productName as N'Tên Sản Phẩm', productPrice as N'Giá', productTypeName as N'Loại Sản Phẩm'
-	from Product, ProductType
-	where Product.productTypeId = ProductType.productTypeId
+	select productId as N'Mã Sản Phẩm', productName as N'Tên Sản Phẩm', productPrice as N'Giá', productAmount as 'Số lượng', productTypeId as N'Mã Loại Sản Phẩm'
+	from Product
 end
 go
+
+-- Tìm kiếm Product theo tên sản phẩm không dấu
+CREATE FUNCTION [dbo].[fuConvertToUnsign1] 
+( @strInput NVARCHAR(4000) ) 
+RETURNS NVARCHAR(4000) 
+AS 
+BEGIN 
+	IF @strInput IS NULL 
+		RETURN @strInput 
+	IF @strInput = '' 
+		RETURN @strInput 
+	DECLARE @RT NVARCHAR(4000) 
+	DECLARE @SIGN_CHARS NCHAR(136) 
+	DECLARE @UNSIGN_CHARS NCHAR (136) 
+	SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' 
+	DECLARE @COUNTER int 
+	DECLARE @COUNTER1 int 
+	SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) 
+		BEGIN 
+			SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) 
+				BEGIN 
+					IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) 
+						BEGIN 
+							IF @COUNTER=1 
+								SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) 
+							ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) 
+							BREAK 
+						END 
+							SET @COUNTER1 = @COUNTER1 +1 
+				END SET @COUNTER = @COUNTER +1 
+		END SET @strInput = replace(@strInput,' ','-') 
+	RETURN @strInput 
+END
+go
+
+-- Truy suất Account
+create proc USP_SearchAccount
+@userName nvarchar(100)
+as
+begin
+	select Staff.staffId as N'Mã Nhân Viên', userName as N'Tên Tài Khoản', passWord as N'Mật Khẩu', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
+	,address as N'Địa Chỉ', accountType as N'Quản Lý'
+	from Account, Staff
+	where Account.staffId = Staff.staffId and userName = @userName
+end
+go
+exec USP_SearchAccount 'hai001'
+

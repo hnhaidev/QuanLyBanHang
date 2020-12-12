@@ -18,6 +18,10 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
             LoadCbbProductType();
+            lvProductInfo.View = View.Details;
+            lvProductInfo.GridLines = true;
+            lvProductInfo.FullRowSelect = true;
+            
         }
         void LoadCbbProductType()
         {
@@ -40,6 +44,16 @@ namespace QuanLyBanHang
             ProductType selected = cb.SelectedItem as ProductType;
             id = selected.ProductTypeId;
             LoadCbbProduct(id);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -43,12 +43,37 @@ namespace QuanLyBanHang.DAO
             return list;
         }
 
-        public bool InsertProduct(int productId, string productName, string productType, float productPrice)
+        public bool InsertProduct( string productName, int productTypeID, float productPrice, int productAmount)
         {
-            string query = string.Format("insert Account ( productId , productName , productType , productPrice ) " +
-                "values ( N'{0}' , N'{1}' , N'{2}' , N'{3}' )", productId, productName, productType, productPrice);
+            string query = string.Format("insert Product ( productName , productTypeId , productPrice , productAmount ) " +
+                "values ( N'{0}' , {1} , {2}, {3} )",productName, productTypeID, productPrice, productAmount);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
+        }
+        public bool UpdateProduct(int productId, string productName, int productTypeID, float productPrice, int productAmount)
+        {
+            string query = string.Format("update Product set productName = N'{1}', productTypeId = {2} , " +
+                "productPrice = {3} , productAmount = {4} where productId = {0}", productId, productName, productTypeID, productPrice, productAmount);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool DeleteProduct(int productId)
+        {
+            string query = string.Format("delete Product where productId"+ productId);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public List<Products> SearchProductByName(string productName)
+        {
+            List<Products> list = new List<Products>();
+            string query = string.Format("select * from Product where dbo.fuConvertToUnsign1(productName) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", productName);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Products products = new Products(item);
+                list.Add(products);
+            }
+            return list;
         }
     }
 }

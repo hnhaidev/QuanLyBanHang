@@ -50,7 +50,7 @@ namespace QuanLyBanHang
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            if(loginAccount.AccountType == 0)
+            if(loginAccount.AccountType == true)
             {
                 LoadSidePanel(btnAccount);
                 userAccount1.BringToFront();
@@ -75,8 +75,15 @@ namespace QuanLyBanHang
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            LoadSidePanel(btnProducts);
-            userProducts1.BringToFront();
+            if (loginAccount.AccountType == true)
+            {
+                LoadSidePanel(btnProducts);
+                userProducts1.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Quản lý mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnStatistical_Click(object sender, EventArgs e)
@@ -116,6 +123,11 @@ namespace QuanLyBanHang
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn muốn hỏi gì nào ?", "Question ?", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }

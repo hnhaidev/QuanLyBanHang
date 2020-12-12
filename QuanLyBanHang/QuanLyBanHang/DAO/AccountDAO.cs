@@ -41,7 +41,7 @@ namespace QuanLyBanHang.DAO
 
             return null;
         }
-        public bool InserAccount(int staffId, string userName, string passWord, int accountType)
+        public bool InserAccount(int staffId, string userName, string passWord, bool accountType)
         {
             string query = string.Format("insert Account ( staffId , userName , passWord , accountType ) " +
                 "values ( N'{0}' , N'{1}' , N'{2}' , N'{3}' )", staffId , userName , passWord, accountType );
@@ -54,11 +54,16 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateAccount(int staffId, string userName, string passWord, int accountType)
+        public bool UpdateAccount(int staffId, string userName, string passWord, bool accountType)
         {
             string query = string.Format("update Account set staffId = {1} , passWord = '{2}' , accountType = {3} where userName = '{0}'", userName , staffId , passWord , accountType);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
+        }
+        public DataTable GetListAccountByName(string name)
+        {
+            string query = string.Format("exec USP_SearchAccount N'{0}'", name);
+            return DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }
