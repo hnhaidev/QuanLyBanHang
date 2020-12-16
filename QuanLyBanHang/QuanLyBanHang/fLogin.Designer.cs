@@ -141,7 +141,7 @@ namespace QuanLyBanHang
             this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.txtPassword.BorderRadius = 15;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "";
+            this.txtPassword.DefaultText = "1";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -158,6 +158,7 @@ namespace QuanLyBanHang
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionStart = 1;
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(179, 25);
             this.txtPassword.TabIndex = 2;
@@ -172,7 +173,7 @@ namespace QuanLyBanHang
             this.txtUseName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.txtUseName.BorderRadius = 15;
             this.txtUseName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUseName.DefaultText = "";
+            this.txtUseName.DefaultText = "hai001";
             this.txtUseName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUseName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUseName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -190,6 +191,7 @@ namespace QuanLyBanHang
             this.txtUseName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.txtUseName.PlaceholderText = "";
             this.txtUseName.SelectedText = "";
+            this.txtUseName.SelectionStart = 6;
             this.txtUseName.ShadowDecoration.Parent = this.txtUseName;
             this.txtUseName.Size = new System.Drawing.Size(179, 27);
             this.txtUseName.TabIndex = 1;

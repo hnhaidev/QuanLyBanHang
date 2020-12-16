@@ -30,7 +30,7 @@ create table Account
 	staffId int not null,
 	userName nvarchar(100) primary key,
 	passWord nvarchar(100) not null,
-	accountType bit
+	accountType int
 
 	foreign key (staffId) references Staff(staffId) -- khóa ngoại
 )
@@ -60,10 +60,9 @@ go
 --------------------------------Tạo bảng Client--------------------------
 create table Client
 (
-	clientId int identity primary key, -- khóa chính
+	phoneNumber nvarchar(100) primary key,-- khóa chính
 	clientName nvarchar(100),
 	address nvarchar(100),
-	phoneNumber nvarchar(100)
 )
 go
 
@@ -71,13 +70,13 @@ go
 create table Bill
 (
 	billId int identity primary key, -- khóa chính
-	clientId int not null,
 	staffId int not null,
+	phoneNumber nvarchar(100) not null,
 	billDate date,
 	sumMoney float
 
 	
-	foreign key (clientId) references Client(clientId), -- khóa ngoại
+	foreign key (phoneNumber) references Client(phoneNumber), -- khóa ngoại
 	foreign key (staffId) references Staff(staffId) -- khóa ngoại
 )
 go
@@ -85,7 +84,6 @@ go
 --------------------------------Tạo bảng BillIfo--------------------------
 create table BillInfo
 (
-	billInfoId int identity primary key,
 	billId int not null,
 	productId int not null,
 	amount int,
@@ -140,20 +138,20 @@ go
 
 -- Bảng Client
 insert into Client 
-values (N'Ông Phúc',N'Nghệ An', '1101010') 
+values ('03333333',N'Ông Phúc',N'Nghệ An') 
 insert into Client 
-values (N'Ông Phúc',N'Nghệ An', '1101010') 
+values ('03333334',N'Ông Phúc',N'Nghệ An') 
 insert into Client 
-values (N'Ông Phúc',N'Nghệ An', '1101010') 
+values ('03333335',N'Ông Phúc',N'Nghệ An') 
 go
 
 -- Bảng Bill
 insert into Bill 
-values (1,1,'2020-10-10',15000) 
+values (1,'03333333','2020-10-10',15000) 
 insert into Bill 
-values (2,1,'2020-10-10',15000)
+values (2,'03333334','2020-10-10',15000)
 insert into Bill 
-values (3,2,'2020-10-10',15000)
+values (3,'03333335','2020-10-10',15000)
 go
 
 -- Bảng BillInfo
@@ -237,5 +235,42 @@ begin
 	where Account.staffId = Staff.staffId and userName = @userName
 end
 go
-exec USP_SearchAccount 'hai001'
+
+-- Thêm Bill
+create proc USP_InsertBill
+@staffId int , @clientPhone nvarchar(100)
+as
+begin
+	insert Bill (staffId , phoneNumber ,billDate ,sumMoney )
+	values (@staffId, @clientPhone,GETDATE(), 20000)
+end
+go
+
+-- Thêm BillInfo
+Alter proc USP_InsertBillInfo
+@billId int, @productId int, @amount int
+as
+begin
+	declare @isExitBillInfo int
+	declare @productCount int  = 1
+
+	select @productCount = amount, @isExitBillInfo = billId
+	from BillInfo
+	where billId = @billId and productId = @productId
+
+	if(@isExitBillInfo > 0)
+	begin
+		declare @newCount int = @productCount + @amount
+		if (@newCount > 0)
+			Update BillInfo set amount = @productCount + @amount where billId = @billId and productId = @productId
+		else
+			delete BillInfo where billId = @billId and productId = @productId 
+	end
+	else
+	begin
+		insert BillInfo(billId, productId, amount)
+		values(@billId, @productId, @amount)
+	end
+end
+go
 

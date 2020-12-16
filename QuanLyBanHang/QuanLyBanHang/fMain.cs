@@ -50,7 +50,7 @@ namespace QuanLyBanHang
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            if(loginAccount.AccountType == true)
+            if(loginAccount.AccountType == 0)
             {
                 LoadSidePanel(btnAccount);
                 userAccount1.BringToFront();
@@ -75,7 +75,7 @@ namespace QuanLyBanHang
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            if (loginAccount.AccountType == true)
+            if (loginAccount.AccountType == 0)
             {
                 LoadSidePanel(btnProducts);
                 userProducts1.BringToFront();

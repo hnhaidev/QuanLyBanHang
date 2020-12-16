@@ -21,13 +21,13 @@ namespace QuanLyBanHang.DTO
         public float SumMoney { get => sumMoney; set => sumMoney = value; }
 
         private Bill() { }
-        public Bill(int _billId, int _clientId, int _staffId, DateTime _billDate, float _sumMoney)
+        public Bill(int billId, int clientId, int staffId, DateTime billDate, float sumMoney)
         {
-            this.billId = _billId;
-            this.clientId = _clientId;
-            this.staffId = _staffId;
-            this.billDate = _billDate;
-            this.sumMoney = _sumMoney;
+            this.BillId = billId;
+            this.ClientId = clientId;
+            this.StaffId = staffId;
+            this.BillDate = billDate;
+            this.SumMoney = sumMoney;
         }
     }
 }

@@ -1,8 +1,9 @@
-﻿using QuanLyBanHang.DTO;
+﻿    using QuanLyBanHang.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,8 +22,20 @@ namespace QuanLyBanHang.DAO
 
         public bool Login(string userName, string passWord)
         {
+            /* Mã hóa Pass
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(passWord); // Lấy ra mảng kiểu byte từ chuổi
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = ""; 
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }
+            var list = hasData.ToString();
+            list.Reverse(); // Đảo ngược pass
+            */
+
             string query = "USP_Login @userName , @passWord ";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
             return result.Rows.Count > 0;
         }
 
@@ -41,7 +54,7 @@ namespace QuanLyBanHang.DAO
 
             return null;
         }
-        public bool InserAccount(int staffId, string userName, string passWord, bool accountType)
+        public bool InserAccount(int staffId, string userName, string passWord, int accountType)
         {
             string query = string.Format("insert Account ( staffId , userName , passWord , accountType ) " +
                 "values ( N'{0}' , N'{1}' , N'{2}' , N'{3}' )", staffId , userName , passWord, accountType );
@@ -54,7 +67,7 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateAccount(int staffId, string userName, string passWord, bool accountType)
+        public bool UpdateAccount(int staffId, string userName, string passWord, int accountType)
         {
             string query = string.Format("update Account set staffId = {1} , passWord = '{2}' , accountType = {3} where userName = '{0}'", userName , staffId , passWord , accountType);
             int result = DataProvider.Instance.ExecuteNonQuery(query);

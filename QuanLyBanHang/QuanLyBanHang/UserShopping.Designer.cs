@@ -30,19 +30,27 @@ namespace QuanLyBanHang
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lvProductInfo = new System.Windows.Forms.ListView();
+            this.dtgvProductInfo = new System.Windows.Forms.DataGridView();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.nmudAmout = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dtPurchase = new System.Windows.Forms.DateTimePicker();
             this.cbbProduct = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbProductType = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtPurchase = new System.Windows.Forms.DateTimePicker();
+            this.btnSaveClient = new Guna.UI2.WinForms.Guna2Button();
+            this.nmudPayAmount = new System.Windows.Forms.NumericUpDown();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtClinetName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClinetPhone = new System.Windows.Forms.TextBox();
@@ -50,12 +58,9 @@ namespace QuanLyBanHang
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.nmudPayAmount = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelClientName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProductInfo)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudAmout)).BeginInit();
@@ -65,21 +70,34 @@ namespace QuanLyBanHang
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lvProductInfo);
+            this.panel2.Controls.Add(this.dtgvProductInfo);
             this.panel2.Location = new System.Drawing.Point(0, 156);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(743, 211);
             this.panel2.TabIndex = 1;
             // 
-            // lvProductInfo
+            // dtgvProductInfo
             // 
-            this.lvProductInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvProductInfo.HideSelection = false;
-            this.lvProductInfo.Location = new System.Drawing.Point(0, 0);
-            this.lvProductInfo.Name = "lvProductInfo";
-            this.lvProductInfo.Size = new System.Drawing.Size(743, 211);
-            this.lvProductInfo.TabIndex = 0;
-            this.lvProductInfo.UseCompatibleStateImageBehavior = false;
+            this.dtgvProductInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvProductInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvProductInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productName,
+            this.amount});
+            this.dtgvProductInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvProductInfo.Location = new System.Drawing.Point(0, 0);
+            this.dtgvProductInfo.Name = "dtgvProductInfo";
+            this.dtgvProductInfo.Size = new System.Drawing.Size(743, 211);
+            this.dtgvProductInfo.TabIndex = 0;
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Tên Sản Phẩm";
+            this.productName.Name = "productName";
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Số Lượng";
+            this.amount.Name = "amount";
             // 
             // panel1
             // 
@@ -152,6 +170,16 @@ namespace QuanLyBanHang
             this.label6.TabIndex = 15;
             this.label6.Text = "Amount: ";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 15);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Date:";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -161,6 +189,14 @@ namespace QuanLyBanHang
             this.label5.Size = new System.Drawing.Size(88, 15);
             this.label5.TabIndex = 14;
             this.label5.Text = "Product name: ";
+            // 
+            // dtPurchase
+            // 
+            this.dtPurchase.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPurchase.Location = new System.Drawing.Point(112, 86);
+            this.dtPurchase.Name = "dtPurchase";
+            this.dtPurchase.Size = new System.Drawing.Size(90, 21);
+            this.dtPurchase.TabIndex = 10;
             // 
             // cbbProduct
             // 
@@ -194,6 +230,7 @@ namespace QuanLyBanHang
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.btnSaveClient);
             this.panel3.Controls.Add(this.nmudPayAmount);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.label9);
@@ -208,118 +245,38 @@ namespace QuanLyBanHang
             this.panel3.Size = new System.Drawing.Size(352, 113);
             this.panel3.TabIndex = 0;
             // 
-            // label3
+            // btnSaveClient
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 15);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Date:";
+            this.btnSaveClient.CheckedState.Parent = this.btnSaveClient;
+            this.btnSaveClient.CustomImages.Parent = this.btnSaveClient;
+            this.btnSaveClient.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnSaveClient.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSaveClient.ForeColor = System.Drawing.Color.White;
+            this.btnSaveClient.HoverState.Parent = this.btnSaveClient;
+            this.btnSaveClient.Location = new System.Drawing.Point(260, 87);
+            this.btnSaveClient.Name = "btnSaveClient";
+            this.btnSaveClient.ShadowDecoration.Parent = this.btnSaveClient;
+            this.btnSaveClient.Size = new System.Drawing.Size(75, 21);
+            this.btnSaveClient.TabIndex = 18;
+            this.btnSaveClient.Text = "Save";
+            this.btnSaveClient.Click += new System.EventHandler(this.btnSaveClient_Click);
             // 
-            // dtPurchase
+            // nmudPayAmount
             // 
-            this.dtPurchase.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtPurchase.Location = new System.Drawing.Point(112, 86);
-            this.dtPurchase.Name = "dtPurchase";
-            this.dtPurchase.Size = new System.Drawing.Size(90, 21);
-            this.dtPurchase.TabIndex = 10;
-            // 
-            // txtClinetName
-            // 
-            this.txtClinetName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClinetName.Location = new System.Drawing.Point(136, 36);
-            this.txtClinetName.Name = "txtClinetName";
-            this.txtClinetName.Size = new System.Drawing.Size(199, 20);
-            this.txtClinetName.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Client name:";
-            // 
-            // txtClinetPhone
-            // 
-            this.txtClinetPhone.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClinetPhone.Location = new System.Drawing.Point(136, 10);
-            this.txtClinetPhone.Name = "txtClinetPhone";
-            this.txtClinetPhone.Size = new System.Drawing.Size(118, 20);
-            this.txtClinetPhone.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Clinet Phone: ";
-            // 
-            // btnRefesh
-            // 
-            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
-            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
-            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(179, 376);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
-            this.btnRefesh.Size = new System.Drawing.Size(90, 21);
-            this.btnRefesh.TabIndex = 18;
-            this.btnRefesh.Text = "Refesh";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(497, 376);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(90, 21);
-            this.guna2Button2.TabIndex = 19;
-            this.guna2Button2.Text = "Pay";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.label7.Location = new System.Drawing.Point(0, 123);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(740, 30);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Products Information";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(136, 61);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(199, 20);
-            this.txtAddress.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 64);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 15);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Address:";
+            this.nmudPayAmount.Location = new System.Drawing.Point(107, 87);
+            this.nmudPayAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmudPayAmount.Name = "nmudPayAmount";
+            this.nmudPayAmount.Size = new System.Drawing.Size(50, 21);
+            this.nmudPayAmount.TabIndex = 19;
+            this.nmudPayAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnSearch
             // 
@@ -337,23 +294,6 @@ namespace QuanLyBanHang
             this.btnSearch.Text = "Search";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // nmudPayAmount
-            // 
-            this.nmudPayAmount.Location = new System.Drawing.Point(136, 87);
-            this.nmudPayAmount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmudPayAmount.Name = "nmudPayAmount";
-            this.nmudPayAmount.Size = new System.Drawing.Size(50, 21);
-            this.nmudPayAmount.TabIndex = 19;
-            this.nmudPayAmount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -364,10 +304,117 @@ namespace QuanLyBanHang
             this.label9.TabIndex = 18;
             this.label9.Text = "Pay Amount: ";
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(107, 61);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(228, 20);
+            this.txtAddress.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(19, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 15);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Address:";
+            // 
+            // txtClinetName
+            // 
+            this.txtClinetName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClinetName.Location = new System.Drawing.Point(107, 36);
+            this.txtClinetName.Name = "txtClinetName";
+            this.txtClinetName.Size = new System.Drawing.Size(228, 20);
+            this.txtClinetName.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Client name:";
+            // 
+            // txtClinetPhone
+            // 
+            this.txtClinetPhone.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClinetPhone.Location = new System.Drawing.Point(107, 10);
+            this.txtClinetPhone.Name = "txtClinetPhone";
+            this.txtClinetPhone.Size = new System.Drawing.Size(147, 20);
+            this.txtClinetPhone.TabIndex = 7;
+            this.txtClinetPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClinetPhone_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Client Phone: ";
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
+            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
+            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRefesh.ForeColor = System.Drawing.Color.White;
+            this.btnRefesh.HoverState.Parent = this.btnRefesh;
+            this.btnRefesh.Location = new System.Drawing.Point(182, 390);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
+            this.btnRefesh.Size = new System.Drawing.Size(90, 21);
+            this.btnRefesh.TabIndex = 18;
+            this.btnRefesh.Text = "Refesh";
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(504, 390);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(90, 21);
+            this.guna2Button2.TabIndex = 19;
+            this.guna2Button2.Text = "Pay";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label7.Location = new System.Drawing.Point(0, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(740, 30);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Products Information";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelClientName
+            // 
+            this.labelClientName.AutoSize = true;
+            this.labelClientName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClientName.Location = new System.Drawing.Point(586, 134);
+            this.labelClientName.Name = "labelClientName";
+            this.labelClientName.Size = new System.Drawing.Size(73, 14);
+            this.labelClientName.TabIndex = 22;
+            this.labelClientName.Text = "Client name";
+            // 
             // UserShopping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelClientName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btnRefesh);
@@ -376,6 +423,7 @@ namespace QuanLyBanHang
             this.Name = "UserShopping";
             this.Size = new System.Drawing.Size(743, 433);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProductInfo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -384,6 +432,7 @@ namespace QuanLyBanHang
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudPayAmount)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -408,11 +457,15 @@ namespace QuanLyBanHang
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListView lvProductInfo;
         private System.Windows.Forms.NumericUpDown nmudPayAmount;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dtgvProductInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private Guna.UI2.WinForms.Guna2Button btnSaveClient;
+        private System.Windows.Forms.Label labelClientName;
     }
 }

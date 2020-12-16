@@ -66,14 +66,14 @@ namespace QuanLyBanHang
             int staffId = (int)Convert.ToInt32(txtStaffId.Text);
             string userName = txtUserName.Text;
             string passWord = txtPassWord.Text;
-            bool accountType = false;
+            int accountType = 0;
             if (rdoManage.Checked == true)
             {
-                accountType = true; 
+                accountType = 1; 
             }
             else
             {
-                accountType = false;
+                accountType = 0;
             }
             if (txtPassWord.Text == txtReconfirmPW.Text)
             {
@@ -84,7 +84,7 @@ namespace QuanLyBanHang
                 MessageBox.Show("Mật khẩu không trùng khớp!","Thông báo!",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void InsertAccount(int staffId, string userName, string passWord, bool accountType)
+        void InsertAccount(int staffId, string userName, string passWord, int accountType)
         {
             if (AccountDAO.Instance.InserAccount(staffId, userName, passWord, accountType))
             {
@@ -102,14 +102,14 @@ namespace QuanLyBanHang
             int staffId = (int)Convert.ToInt32(txtStaffId.Text);
             string userName = txtUserName.Text;
             string passWord = txtPassWord.Text;
-            bool accountType = false;
+            int accountType = 0;
             if (rdoManage.Checked == true)
             {
-                accountType = true;
+                accountType = 1;
             }
             else
             {
-                accountType = false;
+                accountType = 0;
             }
             if (txtPassWord.Text == txtReconfirmPW.Text)
             {
@@ -120,7 +120,7 @@ namespace QuanLyBanHang
                 MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void UpdateAccount(int staffId, string userName, string passWord, bool accountType)
+        void UpdateAccount(int staffId, string userName, string passWord, int accountType)
         {
             if (AccountDAO.Instance.UpdateAccount(staffId, userName, passWord, accountType))
             {
