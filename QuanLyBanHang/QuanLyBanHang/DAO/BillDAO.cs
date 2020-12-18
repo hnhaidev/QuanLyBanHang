@@ -30,9 +30,9 @@ namespace QuanLyBanHang.DAO
                 return 1;
             }
         }
-        public void InsertBill(int staffId, string clientPhone)
+        public void InsertBill(string clientPhone)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @staffId , @clientPhone ", new object[] { staffId, clientPhone});
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @clientPhone ", new object[] {clientPhone});
         }
     }
 }

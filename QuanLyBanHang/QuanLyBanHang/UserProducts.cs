@@ -76,13 +76,21 @@ namespace QuanLyBanHang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int productId = Convert.ToInt32(txtProductId.Text);
-            string productName = txtProductName.Text;
-            int productTypeId = (cbbProductType.SelectedItem as ProductType).ProductTypeId;
-            float productPrice = (float)Convert.ToDouble(txtPrice.Text);
-            int productAmount = (int)nmudProductAmount.Value;
+            if(txtProductId.Text.Trim().Length > 0)
+            {
+                int productId = Convert.ToInt32(txtProductId.Text);
+                string productName = txtProductName.Text;
+                int productTypeId = (cbbProductType.SelectedItem as ProductType).ProductTypeId;
+                float productPrice = (float)Convert.ToDouble(txtPrice.Text);
+                int productAmount = (int)nmudProductAmount.Value;
 
-            UpdateProduct(productId, productName, productTypeId, productPrice, productAmount);
+                UpdateProduct(productId, productName, productTypeId, productPrice, productAmount);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Sản phẩm cần sửa !");
+            }
+
         }
         void UpdateProduct(int productId, string productName, int productTypeId, float productPrice, int productAmount)
         {
@@ -99,8 +107,15 @@ namespace QuanLyBanHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int productId = Convert.ToInt32(txtProductId.Text);
-            DeleteProduct(productId);
+            if (txtProductId.Text.Trim().Length > 0)
+            {
+                int productId = Convert.ToInt32(txtProductId.Text);
+                DeleteProduct(productId);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Sản phẩm cần xóa !");
+            }
         }
         public void DeleteProduct(int productID)
         {

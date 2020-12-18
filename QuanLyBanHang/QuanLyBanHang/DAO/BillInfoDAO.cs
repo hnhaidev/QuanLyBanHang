@@ -24,16 +24,16 @@ namespace QuanLyBanHang.DAO
         private BillInfoDAO() { }
         public void InsertBillInfo(int billId, int productId, int amount)
         {
-            DataProvider.Instance.ExecuteNonQuery("proc USP_InsertBillInfo @billId , @productId , @amount ", new object[] { billId , productId , amount });
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @billId , @productId , @amount ", new object[] { billId , productId , amount });
         }
         public void DeleteBillInfo(int productId)
         {
             DataProvider.Instance.ExecuteNonQuery("Delete BillInfo where productId = " + productId);
         }
-        public List<BillInfo> GetListBillInfo(int productId)
+        public List<BillInfo> GetListBillInfo(int billId)
         {
             List<BillInfo> listBillInfo = new List<BillInfo>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from BillInfo where productId = " + productId);
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from BillInfo where billId = " + billId);
             foreach (DataRow item in data.Rows)
             {
                 BillInfo info = new BillInfo(item);

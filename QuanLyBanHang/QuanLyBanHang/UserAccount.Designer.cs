@@ -31,6 +31,7 @@ namespace QuanLyBanHang
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -48,7 +49,6 @@ namespace QuanLyBanHang
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
@@ -88,6 +88,22 @@ namespace QuanLyBanHang
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(710, 143);
             this.panel2.TabIndex = 2;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
+            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
+            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRefesh.ForeColor = System.Drawing.Color.White;
+            this.btnRefesh.HoverState.Parent = this.btnRefesh;
+            this.btnRefesh.Location = new System.Drawing.Point(137, 108);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
+            this.btnRefesh.Size = new System.Drawing.Size(60, 21);
+            this.btnRefesh.TabIndex = 23;
+            this.btnRefesh.Text = "Refesh";
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // txtSearch
             // 
@@ -272,6 +288,7 @@ namespace QuanLyBanHang
             // 
             // dtgvAccount
             // 
+            this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvAccount.Location = new System.Drawing.Point(0, 178);
@@ -281,22 +298,6 @@ namespace QuanLyBanHang
             this.dtgvAccount.Size = new System.Drawing.Size(743, 255);
             this.dtgvAccount.TabIndex = 1;
             this.dtgvAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellContentClick);
-            // 
-            // btnRefesh
-            // 
-            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
-            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
-            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(137, 108);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
-            this.btnRefesh.Size = new System.Drawing.Size(60, 21);
-            this.btnRefesh.TabIndex = 23;
-            this.btnRefesh.Text = "Refesh";
-            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // UserAccount
             // 

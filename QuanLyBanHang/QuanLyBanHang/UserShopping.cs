@@ -14,13 +14,6 @@ namespace QuanLyBanHang
 {
     public partial class UserShopping : UserControl
     {
-        private Account loginAccount;
-
-        public Account LoginAccount
-        {
-            get { return loginAccount; }
-            set { loginAccount = value; }
-        }
         public UserShopping()
         {
             InitializeComponent();
@@ -40,11 +33,7 @@ namespace QuanLyBanHang
         }
         void LoadDtgv()
         {
-            DataTable data = new DataTable();
-            data.Columns.Add("Tên Sản Phẩm", System.Type.GetType("System.String"));
-            data.Columns.Add("Số Lượng", System.Type.GetType("System.Int32"));
-            data.Columns.Add("Giá", System.Type.GetType("System.String"));
-            dtgvProductInfo.DataSource = data;
+            dtgvProductInfo.DataSource = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetMaxIdBill());
         }
 
         private void cbbProductType_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,8 +50,9 @@ namespace QuanLyBanHang
         {
             int productId = (cbbProduct.SelectedItem as Products).ProductId;
             int amount = (int)nmudAmout.Value;
-            BillDAO.Instance.InsertBill(LoginAccount.StaffId, txtClinetPhone.Text);
+            BillDAO.Instance.InsertBill(txtClinetPhone.Text);
             BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIdBill(), productId, amount);
+            LoadDtgv();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -26,6 +26,7 @@ namespace QuanLyBanHang
             if (CheckLogin(userName, passWord))
             {
                 Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+
                 fMain f = new fMain(loginAccount);
                 this.Hide();
                 f.Show();

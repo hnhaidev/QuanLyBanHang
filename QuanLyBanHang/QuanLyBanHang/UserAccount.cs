@@ -33,7 +33,6 @@ namespace QuanLyBanHang
             txtUserName.Enabled = false;
 
             txtUserName.Text = dtgvAccount.Rows[row].Cells["Tên Tài Khoản"].Value.ToString();
-            txtPassWord.Text = dtgvAccount.Rows[row].Cells["Mật Khẩu"].Value.ToString();
             txtStaffId.Text = dtgvAccount.Rows[row].Cells["Mã Nhân Viên"].Value.ToString();
             if (Convert.ToBoolean(dtgvAccount.Rows[row].Cells["Quản Lý"].Value) == true)
             {
@@ -63,25 +62,50 @@ namespace QuanLyBanHang
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int staffId = (int)Convert.ToInt32(txtStaffId.Text);
-            string userName = txtUserName.Text;
-            string passWord = txtPassWord.Text;
-            int accountType = 0;
-            if (rdoManage.Checked == true)
+            if(txtUserName.Enabled == false)
             {
-                accountType = 1; 
+                MessageBox.Show("Vui lòng Refesh để nhập tên tài khoản khác !");
+            }
+            else if (txtUserName.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập tên tài khoản !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (AccountDAO.Instance.GetListAccountByName(txtUserName.Text).Rows.Count > 0)
+            {
+                MessageBox.Show("Tên tài khoản đã tồn tại !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                accountType = 0;
-            }
-            if (txtPassWord.Text == txtReconfirmPW.Text)
-            {
-                InsertAccount(staffId, userName, passWord, accountType);
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu không trùng khớp!","Thông báo!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int staffId = (int)Convert.ToInt32(txtStaffId.Text);
+                string userName = txtUserName.Text;
+                string passWord = txtPassWord.Text;
+                int accountType = 0;
+                if (rdoManage.Checked == true)
+                {
+                    accountType = 1;
+                }
+                else
+                {
+                    accountType = 0;
+                }
+
+                // Kiểm tra nhập
+                if (txtStaffId.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("Vui lòng nhập Mã nhân viên !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtPassWord.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtPassWord.Text != txtReconfirmPW.Text)
+                {
+                    MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    InsertAccount(staffId, userName, passWord, accountType);
+                }
             }
         }
         void InsertAccount(int staffId, string userName, string passWord, int accountType)
@@ -99,25 +123,32 @@ namespace QuanLyBanHang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int staffId = (int)Convert.ToInt32(txtStaffId.Text);
-            string userName = txtUserName.Text;
-            string passWord = txtPassWord.Text;
-            int accountType = 0;
-            if (rdoManage.Checked == true)
+            if(txtUserName.Enabled == false)
             {
-                accountType = 1;
+                int staffId = (int)Convert.ToInt32(txtStaffId.Text);
+                string userName = txtUserName.Text;
+                string passWord = txtPassWord.Text;
+                int accountType = 0;
+                if (rdoManage.Checked == true)
+                {
+                    accountType = 1;
+                }
+                else
+                {
+                    accountType = 0;
+                }
+                if (txtPassWord.Text == txtReconfirmPW.Text)
+                {
+                    UpdateAccount(staffId, userName, passWord, accountType);
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                accountType = 0;
-            }
-            if (txtPassWord.Text == txtReconfirmPW.Text)
-            {
-                UpdateAccount(staffId, userName, passWord, accountType);
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn tài khoản cần sửa !");
             }
         }
         void UpdateAccount(int staffId, string userName, string passWord, int accountType)
@@ -135,8 +166,15 @@ namespace QuanLyBanHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string userName = txtUserName.Text;
-            DeleteAccount(userName);
+            if(txtUserName.Enabled == false)
+            {
+                string userName = txtUserName.Text;
+                DeleteAccount(userName);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản cần xóa !");
+            }
         }
         void DeleteAccount(string userName)
         {

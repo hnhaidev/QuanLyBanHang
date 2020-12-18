@@ -21,7 +21,6 @@ D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debu
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHang.exe
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHang.pdb
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\Guna.UI2.dll
-D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csprojAssemblyReference.cache
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.fMain.resources
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.fLogin.resources
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Properties.Resources.resources
@@ -74,3 +73,4 @@ D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debu
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csprojAssemblyReference.cache

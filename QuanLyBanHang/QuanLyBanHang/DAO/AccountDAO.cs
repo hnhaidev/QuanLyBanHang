@@ -22,21 +22,23 @@ namespace QuanLyBanHang.DAO
 
         public bool Login(string userName, string passWord)
         {
-            /* Mã hóa Pass
-            byte[] temp = ASCIIEncoding.ASCII.GetBytes(passWord); // Lấy ra mảng kiểu byte từ chuổi
-            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
-            string hasPass = ""; 
-            foreach (byte item in hasData)
-            {
-                hasPass += item;
-            }
-            var list = hasData.ToString();
-            list.Reverse(); // Đảo ngược pass
-            */
-
+            string hashPass = MaHoaMD5(passWord);
             string query = "USP_Login @userName , @passWord ";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, hashPass });
             return result.Rows.Count > 0;
+        }
+
+        public string MaHoaMD5(string input)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(input);
+            byte[] hash = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hashPass = "";
+            for (int i = 0; i < hash.Length; i++)
+            {
+                hashPass += hash[i].ToString();
+            }
+            return hashPass;
         }
 
         public DataTable GetListAccount()
@@ -69,7 +71,8 @@ namespace QuanLyBanHang.DAO
         }
         public bool UpdateAccount(int staffId, string userName, string passWord, int accountType)
         {
-            string query = string.Format("update Account set staffId = {1} , passWord = '{2}' , accountType = {3} where userName = '{0}'", userName , staffId , passWord , accountType);
+            string hashPass = MaHoaMD5(passWord);
+            string query = string.Format("update Account set staffId = {1} , passWord = '{2}' , accountType = {3} where userName = '{0}'", userName , staffId , hashPass, accountType);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
