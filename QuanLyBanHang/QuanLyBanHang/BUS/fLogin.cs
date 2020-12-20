@@ -14,6 +14,7 @@ namespace QuanLyBanHang
 {
     public partial class fLogin : Form
     {
+        public static int staffID;
         public fLogin()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace QuanLyBanHang
             if (CheckLogin(userName, passWord))
             {
                 Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+                staffID = loginAccount.StaffId;
 
                 fMain f = new fMain(loginAccount);
                 this.Hide();

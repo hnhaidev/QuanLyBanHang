@@ -32,8 +32,7 @@ namespace QuanLyBanHang.DAO
         public List<Products> GetListProduct(int id)
         {
             List<Products> list = new List<Products>();
-            string query = "select * from Product where productTypeId =" + id;
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListProduct @productTypeId ", new object[] { id });
             foreach (DataRow item in data.Rows)
             {
                 Products products = new Products(item);
@@ -74,6 +73,12 @@ namespace QuanLyBanHang.DAO
                 list.Add(products);
             }
             return list;
+        }
+        public bool UpdateProductAmount(int productId, int amount)
+        {
+            string query = string.Format("Update Product set productAmount = productAmount - {0} where productId = {1} ", amount, productId);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }

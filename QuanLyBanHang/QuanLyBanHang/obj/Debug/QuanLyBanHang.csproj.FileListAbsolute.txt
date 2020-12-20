@@ -35,10 +35,6 @@ D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debu
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csproj.CopyComplete
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.exe
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.pdb
-D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -73,4 +69,6 @@ D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debu
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.BUS.UserStaff.resources
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csprojAssemblyReference.cache
+D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.BUS.fPayment.resources

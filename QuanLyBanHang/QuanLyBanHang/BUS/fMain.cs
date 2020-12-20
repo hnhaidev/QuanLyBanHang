@@ -18,9 +18,8 @@ namespace QuanLyBanHang
         public Account LoginAccount
         {
             get { return loginAccount; }
-            set { loginAccount = value;}
+            set { loginAccount = value; }
         }
-
         public fMain(Account account)
         {
             this.LoginAccount = account;
@@ -119,6 +118,11 @@ namespace QuanLyBanHang
                     break;
             }
         }
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            LoadSidePanel(btnStaff);
+            userStaff1.BringToFront();
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -129,5 +133,6 @@ namespace QuanLyBanHang
         {
             MessageBox.Show("Bạn muốn hỏi gì nào ?", "Question ?", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
     }
 }

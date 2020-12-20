@@ -41,6 +41,7 @@ namespace QuanLyBanHang
             this.btnLogout = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStaff = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,18 +50,18 @@ namespace QuanLyBanHang
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUserName = new System.Windows.Forms.Label();
+            this.txtTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.userStaff1 = new QuanLyBanHang.BUS.UserStaff();
             this.userShopping1 = new QuanLyBanHang.UserShopping();
             this.userStatistical1 = new QuanLyBanHang.UserStatistical();
             this.userProducts1 = new QuanLyBanHang.UserProducts();
             this.userBill1 = new QuanLyBanHang.UserBill();
             this.userAccount1 = new QuanLyBanHang.UserAccount();
             this.userHome1 = new QuanLyBanHang.UserHome();
-            this.btnExit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtUserName = new System.Windows.Forms.Label();
-            this.txtTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +78,7 @@ namespace QuanLyBanHang
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(12, 57);
+            this.btnHome.Location = new System.Drawing.Point(12, 42);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(197, 54);
             this.btnHome.TabIndex = 4;
@@ -95,7 +96,7 @@ namespace QuanLyBanHang
             this.btnAccount.ForeColor = System.Drawing.Color.White;
             this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(12, 177);
+            this.btnAccount.Location = new System.Drawing.Point(12, 102);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(197, 54);
             this.btnAccount.TabIndex = 4;
@@ -129,7 +130,7 @@ namespace QuanLyBanHang
             this.btnShopping.ForeColor = System.Drawing.Color.White;
             this.btnShopping.Image = ((System.Drawing.Image)(resources.GetObject("btnShopping.Image")));
             this.btnShopping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShopping.Location = new System.Drawing.Point(12, 231);
+            this.btnShopping.Location = new System.Drawing.Point(12, 222);
             this.btnShopping.Name = "btnShopping";
             this.btnShopping.Size = new System.Drawing.Size(197, 54);
             this.btnShopping.TabIndex = 4;
@@ -147,7 +148,7 @@ namespace QuanLyBanHang
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.Image = ((System.Drawing.Image)(resources.GetObject("btnBill.Image")));
             this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBill.Location = new System.Drawing.Point(12, 285);
+            this.btnBill.Location = new System.Drawing.Point(12, 282);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(197, 54);
             this.btnBill.TabIndex = 4;
@@ -165,7 +166,7 @@ namespace QuanLyBanHang
             this.btnProducts.ForeColor = System.Drawing.Color.White;
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(12, 339);
+            this.btnProducts.Location = new System.Drawing.Point(12, 342);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(197, 54);
             this.btnProducts.TabIndex = 4;
@@ -183,7 +184,7 @@ namespace QuanLyBanHang
             this.btnStatistical.ForeColor = System.Drawing.Color.White;
             this.btnStatistical.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistical.Image")));
             this.btnStatistical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistical.Location = new System.Drawing.Point(12, 393);
+            this.btnStatistical.Location = new System.Drawing.Point(12, 402);
             this.btnStatistical.Name = "btnStatistical";
             this.btnStatistical.Size = new System.Drawing.Size(197, 54);
             this.btnStatistical.TabIndex = 4;
@@ -201,7 +202,7 @@ namespace QuanLyBanHang
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 447);
+            this.btnLogout.Location = new System.Drawing.Point(12, 462);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(197, 54);
             this.btnLogout.TabIndex = 4;
@@ -213,7 +214,7 @@ namespace QuanLyBanHang
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.SidePanel.Location = new System.Drawing.Point(0, 57);
+            this.SidePanel.Location = new System.Drawing.Point(0, 42);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(10, 54);
             this.SidePanel.TabIndex = 4;
@@ -221,7 +222,7 @@ namespace QuanLyBanHang
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnStaff);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnStatistical);
@@ -236,6 +237,24 @@ namespace QuanLyBanHang
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 582);
             this.panel1.TabIndex = 2;
+            // 
+            // btnStaff
+            // 
+            this.btnStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStaff.FlatAppearance.BorderSize = 0;
+            this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaff.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.ForeColor = System.Drawing.Color.White;
+            this.btnStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnStaff.Image")));
+            this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaff.Location = new System.Drawing.Point(12, 162);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(197, 54);
+            this.btnStaff.TabIndex = 5;
+            this.btnStaff.Text = "       Staff";
+            this.btnStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // label4
             // 
@@ -312,6 +331,7 @@ namespace QuanLyBanHang
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.userStaff1);
             this.panel5.Controls.Add(this.userShopping1);
             this.panel5.Controls.Add(this.userStatistical1);
             this.panel5.Controls.Add(this.userProducts1);
@@ -322,48 +342,6 @@ namespace QuanLyBanHang
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(743, 433);
             this.panel5.TabIndex = 9;
-            // 
-            // userShopping1
-            // 
-            this.userShopping1.Location = new System.Drawing.Point(0, -2);
-            this.userShopping1.Name = "userShopping1";
-            this.userShopping1.Size = new System.Drawing.Size(743, 433);
-            this.userShopping1.TabIndex = 6;
-            // 
-            // userStatistical1
-            // 
-            this.userStatistical1.Location = new System.Drawing.Point(0, 0);
-            this.userStatistical1.Name = "userStatistical1";
-            this.userStatistical1.Size = new System.Drawing.Size(743, 433);
-            this.userStatistical1.TabIndex = 5;
-            // 
-            // userProducts1
-            // 
-            this.userProducts1.Location = new System.Drawing.Point(0, -3);
-            this.userProducts1.Name = "userProducts1";
-            this.userProducts1.Size = new System.Drawing.Size(743, 433);
-            this.userProducts1.TabIndex = 4;
-            // 
-            // userBill1
-            // 
-            this.userBill1.Location = new System.Drawing.Point(0, 0);
-            this.userBill1.Name = "userBill1";
-            this.userBill1.Size = new System.Drawing.Size(743, 433);
-            this.userBill1.TabIndex = 3;
-            // 
-            // userAccount1
-            // 
-            this.userAccount1.Location = new System.Drawing.Point(0, -2);
-            this.userAccount1.Name = "userAccount1";
-            this.userAccount1.Size = new System.Drawing.Size(743, 433);
-            this.userAccount1.TabIndex = 1;
-            // 
-            // userHome1
-            // 
-            this.userHome1.Location = new System.Drawing.Point(0, -3);
-            this.userHome1.Name = "userHome1";
-            this.userHome1.Size = new System.Drawing.Size(743, 433);
-            this.userHome1.TabIndex = 0;
             // 
             // btnExit
             // 
@@ -423,22 +401,54 @@ namespace QuanLyBanHang
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
+            // userStaff1
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 54);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "       Staff";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.userStaff1.Location = new System.Drawing.Point(0, -2);
+            this.userStaff1.Name = "userStaff1";
+            this.userStaff1.Size = new System.Drawing.Size(743, 433);
+            this.userStaff1.TabIndex = 7;
+            // 
+            // userShopping1
+            // 
+            this.userShopping1.Location = new System.Drawing.Point(0, -2);
+            this.userShopping1.Name = "userShopping1";
+            this.userShopping1.Size = new System.Drawing.Size(743, 433);
+            this.userShopping1.TabIndex = 6;
+            // 
+            // userStatistical1
+            // 
+            this.userStatistical1.Location = new System.Drawing.Point(0, 0);
+            this.userStatistical1.Name = "userStatistical1";
+            this.userStatistical1.Size = new System.Drawing.Size(743, 433);
+            this.userStatistical1.TabIndex = 5;
+            // 
+            // userProducts1
+            // 
+            this.userProducts1.Location = new System.Drawing.Point(0, -3);
+            this.userProducts1.Name = "userProducts1";
+            this.userProducts1.Size = new System.Drawing.Size(743, 433);
+            this.userProducts1.TabIndex = 4;
+            // 
+            // userBill1
+            // 
+            this.userBill1.Location = new System.Drawing.Point(0, 0);
+            this.userBill1.Name = "userBill1";
+            this.userBill1.Size = new System.Drawing.Size(743, 433);
+            this.userBill1.TabIndex = 3;
+            // 
+            // userAccount1
+            // 
+            this.userAccount1.Location = new System.Drawing.Point(0, -2);
+            this.userAccount1.Name = "userAccount1";
+            this.userAccount1.Size = new System.Drawing.Size(743, 433);
+            this.userAccount1.TabIndex = 1;
+            // 
+            // userHome1
+            // 
+            this.userHome1.Location = new System.Drawing.Point(0, -3);
+            this.userHome1.Name = "userHome1";
+            this.userHome1.Size = new System.Drawing.Size(743, 433);
+            this.userHome1.TabIndex = 0;
             // 
             // fMain
             // 
@@ -503,6 +513,7 @@ namespace QuanLyBanHang
         private System.Windows.Forms.Label txtTime;
         private System.Windows.Forms.Timer timer1;
         private UserShopping userShopping1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStaff;
+        private BUS.UserStaff userStaff1;
     }
 }

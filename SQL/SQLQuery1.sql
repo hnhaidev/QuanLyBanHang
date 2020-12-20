@@ -236,7 +236,7 @@ end
 go
 
 -- Thêm Bill
-alter proc USP_InsertBill
+create proc USP_InsertBill
 @clientPhone nvarchar(100)
 as
 begin
@@ -246,7 +246,7 @@ end
 go
 
 -- Thêm BillInfo
-alter proc USP_InsertBillInfo
+create proc USP_InsertBillInfo
 @billId int, @productId int, @amount int
 as
 begin

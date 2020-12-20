@@ -31,9 +31,11 @@ namespace QuanLyBanHang
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvProductInfo = new System.Windows.Forms.DataGridView();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.nmudAmout = new System.Windows.Forms.NumericUpDown();
@@ -56,38 +58,61 @@ namespace QuanLyBanHang
             this.txtClinetPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPay = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtDisCount = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.labelClientName = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPay = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPercent = new System.Windows.Forms.TextBox();
+            this.txtSumPrice = new System.Windows.Forms.TextBox();
+            this.SumPrice = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductInfo)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudAmout)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudPayAmount)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dtgvProductInfo);
-            this.panel2.Location = new System.Drawing.Point(0, 156);
+            this.panel2.Location = new System.Drawing.Point(0, 123);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(743, 211);
+            this.panel2.Size = new System.Drawing.Size(743, 214);
             this.panel2.TabIndex = 1;
             // 
             // dtgvProductInfo
             // 
+            this.dtgvProductInfo.AllowUserToAddRows = false;
+            this.dtgvProductInfo.AllowUserToDeleteRows = false;
             this.dtgvProductInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvProductInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvProductInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productId,
             this.productName,
-            this.amount});
+            this.amount,
+            this.price,
+            this.salePrice});
             this.dtgvProductInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvProductInfo.Location = new System.Drawing.Point(0, 0);
             this.dtgvProductInfo.Name = "dtgvProductInfo";
-            this.dtgvProductInfo.Size = new System.Drawing.Size(743, 211);
+            this.dtgvProductInfo.Size = new System.Drawing.Size(743, 214);
             this.dtgvProductInfo.TabIndex = 0;
+            // 
+            // productId
+            // 
+            this.productId.HeaderText = "Mã Sản Phẩm";
+            this.productId.Name = "productId";
             // 
             // productName
             // 
@@ -99,16 +124,15 @@ namespace QuanLyBanHang
             this.amount.HeaderText = "Số Lượng";
             this.amount.Name = "amount";
             // 
-            // panel1
+            // price
             // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(743, 120);
-            this.panel1.TabIndex = 0;
+            this.price.HeaderText = "Đơn Giá";
+            this.price.Name = "price";
+            // 
+            // salePrice
+            // 
+            this.salePrice.HeaderText = "Thành Tiền";
+            this.salePrice.Name = "salePrice";
             // 
             // panel4
             // 
@@ -159,12 +183,13 @@ namespace QuanLyBanHang
             0,
             0,
             0});
+            this.nmudAmout.ValueChanged += new System.EventHandler(this.nmudAmout_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 62);
+            this.label6.Location = new System.Drawing.Point(16, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 15);
             this.label6.TabIndex = 15;
@@ -174,7 +199,7 @@ namespace QuanLyBanHang
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 91);
+            this.label3.Location = new System.Drawing.Point(16, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 11;
@@ -367,56 +392,185 @@ namespace QuanLyBanHang
             this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
             this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(182, 390);
+            this.btnRefesh.Location = new System.Drawing.Point(504, 379);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
             this.btnRefesh.Size = new System.Drawing.Size(90, 21);
             this.btnRefesh.TabIndex = 18;
             this.btnRefesh.Text = "Refesh";
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
-            // guna2Button2
+            // btnPay
             // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(504, 390);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(90, 21);
-            this.guna2Button2.TabIndex = 19;
-            this.guna2Button2.Text = "Pay";
+            this.btnPay.CheckedState.Parent = this.btnPay;
+            this.btnPay.CustomImages.Parent = this.btnPay;
+            this.btnPay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnPay.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.HoverState.Parent = this.btnPay;
+            this.btnPay.Location = new System.Drawing.Point(636, 379);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.ShadowDecoration.Parent = this.btnPay;
+            this.btnPay.Size = new System.Drawing.Size(90, 21);
+            this.btnPay.TabIndex = 19;
+            this.btnPay.Text = "Pay";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(743, 120);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.txtDisCount);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.txtPay);
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.txtPercent);
+            this.panel5.Controls.Add(this.txtSumPrice);
+            this.panel5.Controls.Add(this.SumPrice);
+            this.panel5.Location = new System.Drawing.Point(18, 337);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(470, 93);
+            this.panel5.TabIndex = 20;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(208, 41);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 15);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "VND";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(431, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 15);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "VND";
+            // 
+            // txtDisCount
+            // 
+            this.txtDisCount.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisCount.Location = new System.Drawing.Point(107, 39);
+            this.txtDisCount.Name = "txtDisCount";
+            this.txtDisCount.Size = new System.Drawing.Size(95, 20);
+            this.txtDisCount.TabIndex = 34;
+            this.txtDisCount.TextChanged += new System.EventHandler(this.txtDisCount_TextChanged);
+            this.txtDisCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisCount_KeyPress);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(83, 40);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(13, 16);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "-";
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.label7.Location = new System.Drawing.Point(0, 123);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(208, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(740, 30);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Products Information";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Size = new System.Drawing.Size(32, 15);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "VND";
             // 
-            // labelClientName
+            // label12
             // 
-            this.labelClientName.AutoSize = true;
-            this.labelClientName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientName.Location = new System.Drawing.Point(586, 134);
-            this.labelClientName.Name = "labelClientName";
-            this.labelClientName.Size = new System.Drawing.Size(73, 14);
-            this.labelClientName.TabIndex = 22;
-            this.labelClientName.Text = "Client name";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(83, 68);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "-";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(183, 68);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 16);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "%";
+            // 
+            // txtPay
+            // 
+            this.txtPay.Enabled = false;
+            this.txtPay.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPay.Location = new System.Drawing.Point(330, 36);
+            this.txtPay.Name = "txtPay";
+            this.txtPay.Size = new System.Drawing.Size(95, 20);
+            this.txtPay.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(287, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 15);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Pay:";
+            // 
+            // txtPercent
+            // 
+            this.txtPercent.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPercent.Location = new System.Drawing.Point(107, 67);
+            this.txtPercent.Name = "txtPercent";
+            this.txtPercent.Size = new System.Drawing.Size(70, 20);
+            this.txtPercent.TabIndex = 26;
+            this.txtPercent.TextChanged += new System.EventHandler(this.txtPercent_TextChanged);
+            this.txtPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPercent_KeyPress);
+            // 
+            // txtSumPrice
+            // 
+            this.txtSumPrice.Enabled = false;
+            this.txtSumPrice.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSumPrice.Location = new System.Drawing.Point(107, 11);
+            this.txtSumPrice.Name = "txtSumPrice";
+            this.txtSumPrice.Size = new System.Drawing.Size(95, 20);
+            this.txtSumPrice.TabIndex = 23;
+            this.txtSumPrice.TextChanged += new System.EventHandler(this.txtSumPrice_TextChanged);
+            // 
+            // SumPrice
+            // 
+            this.SumPrice.AutoSize = true;
+            this.SumPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SumPrice.Location = new System.Drawing.Point(19, 13);
+            this.SumPrice.Name = "SumPrice";
+            this.SumPrice.Size = new System.Drawing.Size(63, 15);
+            this.SumPrice.TabIndex = 22;
+            this.SumPrice.Text = "Sum Price:";
             // 
             // UserShopping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelClientName);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnRefesh);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -424,21 +578,21 @@ namespace QuanLyBanHang
             this.Size = new System.Drawing.Size(743, 433);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductInfo)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudAmout)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudPayAmount)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
@@ -455,17 +609,32 @@ namespace QuanLyBanHang
         private System.Windows.Forms.ComboBox cbbProductType;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btnPay;
         private System.Windows.Forms.NumericUpDown nmudPayAmount;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtgvProductInfo;
+        private Guna.UI2.WinForms.Guna2Button btnSaveClient;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtSumPrice;
+        private System.Windows.Forms.Label SumPrice;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPercent;
+        private System.Windows.Forms.TextBox txtPay;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtDisCount;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productId;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private Guna.UI2.WinForms.Guna2Button btnSaveClient;
-        private System.Windows.Forms.Label labelClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salePrice;
     }
 }
