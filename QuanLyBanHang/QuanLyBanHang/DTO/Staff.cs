@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,24 @@ namespace QuanLyBanHang.DTO
 
         }
 
-        public Staff(int _staffId, string _staffName, DateTime _dateOfBirth, string _address, string _phoneNumber, bool _gender)
+        public Staff(int staffId, string staffName, DateTime dateOfBirth, string address, string phoneNumber, bool gender)
         {
-            this.staffId = _staffId;
-            this.staffName = _staffName;
-            this.dateOfBirth = _dateOfBirth;
-            this.address = _address;
-            this.phoneNumber = _phoneNumber;
-            this.gender = _gender;
+            this.StaffId = staffId;
+            this.StaffName = staffName;
+            this.DateOfBirth = dateOfBirth;
+            this.Address = address;
+            this.PhoneNumber = phoneNumber;
+            this.Gender = gender;
+        }
+
+        public Staff(DataRow row)
+        {
+            this.StaffId = (int)row["staffId"];
+            this.StaffName = row["staffName"].ToString();
+            this.DateOfBirth = (DateTime)row["dateOfBirth"];
+            this.Address = row["address"].ToString();
+            this.PhoneNumber = row["phoneNumber"].ToString();
+            this.Gender = (bool)row["gender"];
         }
     }
 }

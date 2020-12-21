@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\fExportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BUS\fExportBill.Designer.cs">
+      <DependentUpon>fExportBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUS\fPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,7 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
     <Compile Include="DAO\ProductTypeDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\StatisticalDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
@@ -144,6 +151,19 @@
     <Compile Include="BUS\UserStatistical.Designer.cs">
       <DependentUpon>UserStatistical.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyBanHangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanHangDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBanHangDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanHangDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BUS\fExportBill.resx">
+      <DependentUpon>fExportBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BUS\fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +173,7 @@
     <EmbeddedResource Include="BUS\fPayment.resx">
       <DependentUpon>fPayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BUS\ReportExportBill.rdlc" />
     <EmbeddedResource Include="BUS\UserStaff.resx">
       <DependentUpon>UserStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +215,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuanLyBanHangDataSet.xsc">
+      <DependentUpon>QuanLyBanHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBanHangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBanHangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBanHangDataSet.xss">
+      <DependentUpon>QuanLyBanHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBanHangDataSet1.xsc">
+      <DependentUpon>QuanLyBanHangDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBanHangDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBanHangDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBanHangDataSet1.xss">
+      <DependentUpon>QuanLyBanHangDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

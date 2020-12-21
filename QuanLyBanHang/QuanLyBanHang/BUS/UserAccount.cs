@@ -22,7 +22,6 @@ namespace QuanLyBanHang
         void LoadAccount()
         {
             dtgvAccount.DataSource = AccountDAO.Instance.GetListAccount();
-            dtgvAccount.EndEdit();
         }
 
         private void dgvAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)

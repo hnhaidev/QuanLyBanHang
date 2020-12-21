@@ -20,7 +20,6 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
             LoadCbbProductType();
-            txtPay.Text = fLogin.staffID.ToString();
         }
         void LoadCbbProductType()
         {
@@ -95,8 +94,21 @@ namespace QuanLyBanHang
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string phoneNumber = txtClinetPhone.Text;
-            if (SearchClientByPhone(phoneNumber).Count > 0)
+            Client client = SearchClientByPhone(phoneNumber);
+            if (client != null)
             {
+                txtClinetName.Text = client.ClientName;
+                txtAddress.Text = client.Address;
+
+                txtAddress.Enabled = false;
+                txtClinetName.Enabled = false;
+                txtClinetPhone.Enabled = false;
+                btnSaveClient.Enabled = false;
+                nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy SĐT cần tìm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -110,6 +122,7 @@ namespace QuanLyBanHang
             txtClinetPhone.Enabled = false;
             txtAddress.Enabled = false;
             txtClinetName.Enabled = false;
+            nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
 
             InsertClient(phoneNumber, clientName, address);
         }
@@ -124,9 +137,9 @@ namespace QuanLyBanHang
         private void txtClinetPhone_KeyDown(object sender, KeyEventArgs e)
         {
         }
-        List<Client> SearchClientByPhone(string phoneNumber)
+        Client SearchClientByPhone(string phoneNumber)
         {
-            List<Client> listClient = ClientDAO.Instance.SearchClientByPhone(phoneNumber);
+            Client listClient = ClientDAO.Instance.SearchClientByPhone(phoneNumber);
             return listClient;
         }
         private void txtSumPrice_TextChanged(object sender, EventArgs e)
@@ -221,9 +234,10 @@ namespace QuanLyBanHang
             {
                 int productID;
                 int amount;
+                int staffId = fLogin.staffID;
                 string phoneClient = txtClinetPhone.Text;
 
-                BillDAO.Instance.InsertBill(phoneClient);
+                BillDAO.Instance.InsertBill(phoneClient, staffId);
 
                 foreach (DataGridViewRow row in dtgvProductInfo.Rows)
                 {
@@ -262,6 +276,7 @@ namespace QuanLyBanHang
             txtAddress.Enabled = true;
             txtClinetName.Enabled = true;
             txtClinetPhone.Enabled = true;
+            btnSaveClient.Enabled = true;
 
             txtAddress.Text = "";
             txtClinetName.Text = "";

@@ -62,17 +62,10 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public List<Products> SearchProductByName(string productName)
+        public DataTable SearchProductByName(string productName)
         {
-            List<Products> list = new List<Products>();
-            string query = string.Format("select * from Product where dbo.fuConvertToUnsign1(productName) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", productName);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                Products products = new Products(item);
-                list.Add(products);
-            }
-            return list;
+            string query = string.Format("USP_SearchProductByName @productName");
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { productName });
         }
         public bool UpdateProductAmount(int productId, int amount)
         {

@@ -288,6 +288,7 @@ namespace QuanLyBanHang
             // 
             // nmudPayAmount
             // 
+            this.nmudPayAmount.Enabled = false;
             this.nmudPayAmount.Location = new System.Drawing.Point(107, 87);
             this.nmudPayAmount.Minimum = new decimal(new int[] {
             1,

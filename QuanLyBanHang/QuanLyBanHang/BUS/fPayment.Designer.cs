@@ -31,23 +31,24 @@ namespace QuanLyBanHang.BUS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fPayment));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPayment = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn100k = new Guna.UI2.WinForms.Guna2Button();
-            this.btn50k = new Guna.UI2.WinForms.Guna2Button();
-            this.btn200k = new Guna.UI2.WinForms.Guna2Button();
-            this.btn500k = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPayEnough = new Guna.UI2.WinForms.Guna2Button();
-            this.txtClientMoney = new System.Windows.Forms.TextBox();
+            this.btnIn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnPayment = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtExtraMoney = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnPayment = new Guna.UI2.WinForms.Guna2Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.txtClientMoney = new System.Windows.Forms.TextBox();
+            this.btnPayEnough = new Guna.UI2.WinForms.Guna2Button();
+            this.btn500k = new Guna.UI2.WinForms.Guna2Button();
+            this.btn200k = new Guna.UI2.WinForms.Guna2Button();
+            this.btn50k = new Guna.UI2.WinForms.Guna2Button();
+            this.btn100k = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPayment = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@ namespace QuanLyBanHang.BUS
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.Controls.Add(this.btnIn);
             this.guna2Panel1.Controls.Add(this.btnClose);
             this.guna2Panel1.Controls.Add(this.label7);
             this.guna2Panel1.Controls.Add(this.label6);
@@ -81,122 +83,95 @@ namespace QuanLyBanHang.BUS
             this.guna2Panel1.Size = new System.Drawing.Size(421, 320);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // label1
+            // btnIn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Payment:";
+            this.btnIn.CheckedState.Parent = this.btnIn;
+            this.btnIn.CustomImages.Parent = this.btnIn;
+            this.btnIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnIn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.HoverState.Parent = this.btnIn;
+            this.btnIn.Location = new System.Drawing.Point(136, 265);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.ShadowDecoration.Parent = this.btnIn;
+            this.btnIn.Size = new System.Drawing.Size(73, 21);
+            this.btnIn.TabIndex = 29;
+            this.btnIn.Text = "Invoice Print";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // txtPayment
+            // btnClose
             // 
-            this.txtPayment.Enabled = false;
-            this.txtPayment.Location = new System.Drawing.Point(136, 65);
-            this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(180, 21);
-            this.txtPayment.TabIndex = 1;
+            this.btnClose.CheckedState.Parent = this.btnClose;
+            this.btnClose.CustomImages.Parent = this.btnClose;
+            this.btnClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.HoverState.Parent = this.btnClose;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageSize = new System.Drawing.Size(17, 17);
+            this.btnClose.Location = new System.Drawing.Point(389, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.ShadowDecoration.Parent = this.btnClose;
+            this.btnClose.Size = new System.Drawing.Size(17, 17);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Client money:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(322, 221);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 15);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "VNĐ";
             // 
-            // btn100k
+            // label6
             // 
-            this.btn100k.CheckedState.Parent = this.btn100k;
-            this.btn100k.CustomImages.Parent = this.btn100k;
-            this.btn100k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btn100k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn100k.ForeColor = System.Drawing.Color.White;
-            this.btn100k.HoverState.Parent = this.btn100k;
-            this.btn100k.Location = new System.Drawing.Point(202, 106);
-            this.btn100k.Name = "btn100k";
-            this.btn100k.ShadowDecoration.Parent = this.btn100k;
-            this.btn100k.Size = new System.Drawing.Size(60, 21);
-            this.btn100k.TabIndex = 16;
-            this.btn100k.Text = "100,000";
-            this.btn100k.Click += new System.EventHandler(this.btn100k_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(322, 181);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 15);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "VNĐ";
             // 
-            // btn50k
+            // label5
             // 
-            this.btn50k.CheckedState.Parent = this.btn50k;
-            this.btn50k.CustomImages.Parent = this.btn50k;
-            this.btn50k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btn50k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn50k.ForeColor = System.Drawing.Color.White;
-            this.btn50k.HoverState.Parent = this.btn50k;
-            this.btn50k.Location = new System.Drawing.Point(136, 106);
-            this.btn50k.Name = "btn50k";
-            this.btn50k.ShadowDecoration.Parent = this.btn50k;
-            this.btn50k.Size = new System.Drawing.Size(60, 21);
-            this.btn50k.TabIndex = 16;
-            this.btn50k.Text = "50,000";
-            this.btn50k.Click += new System.EventHandler(this.btn50k_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(322, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 15);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "VNĐ";
             // 
-            // btn200k
+            // btnPayment
             // 
-            this.btn200k.CheckedState.Parent = this.btn200k;
-            this.btn200k.CustomImages.Parent = this.btn200k;
-            this.btn200k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btn200k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn200k.ForeColor = System.Drawing.Color.White;
-            this.btn200k.HoverState.Parent = this.btn200k;
-            this.btn200k.Location = new System.Drawing.Point(268, 106);
-            this.btn200k.Name = "btn200k";
-            this.btn200k.ShadowDecoration.Parent = this.btn200k;
-            this.btn200k.Size = new System.Drawing.Size(60, 21);
-            this.btn200k.TabIndex = 17;
-            this.btn200k.Text = "200,000";
-            this.btn200k.Click += new System.EventHandler(this.btn200k_Click);
+            this.btnPayment.CheckedState.Parent = this.btnPayment;
+            this.btnPayment.CustomImages.Parent = this.btnPayment;
+            this.btnPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPayment.ForeColor = System.Drawing.Color.White;
+            this.btnPayment.HoverState.Parent = this.btnPayment;
+            this.btnPayment.Location = new System.Drawing.Point(243, 265);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.ShadowDecoration.Parent = this.btnPayment;
+            this.btnPayment.Size = new System.Drawing.Size(73, 21);
+            this.btnPayment.TabIndex = 24;
+            this.btnPayment.Text = "Payment";
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
-            // btn500k
+            // label4
             // 
-            this.btn500k.CheckedState.Parent = this.btn500k;
-            this.btn500k.CustomImages.Parent = this.btn500k;
-            this.btn500k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btn500k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn500k.ForeColor = System.Drawing.Color.White;
-            this.btn500k.HoverState.Parent = this.btn500k;
-            this.btn500k.Location = new System.Drawing.Point(334, 106);
-            this.btn500k.Name = "btn500k";
-            this.btn500k.ShadowDecoration.Parent = this.btn500k;
-            this.btn500k.Size = new System.Drawing.Size(60, 21);
-            this.btn500k.TabIndex = 18;
-            this.btn500k.Text = "500,000";
-            this.btn500k.Click += new System.EventHandler(this.btn500k_Click);
-            // 
-            // btnPayEnough
-            // 
-            this.btnPayEnough.CheckedState.Parent = this.btnPayEnough;
-            this.btnPayEnough.CustomImages.Parent = this.btnPayEnough;
-            this.btnPayEnough.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btnPayEnough.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPayEnough.ForeColor = System.Drawing.Color.White;
-            this.btnPayEnough.HoverState.Parent = this.btnPayEnough;
-            this.btnPayEnough.Location = new System.Drawing.Point(136, 142);
-            this.btnPayEnough.Name = "btnPayEnough";
-            this.btnPayEnough.ShadowDecoration.Parent = this.btnPayEnough;
-            this.btnPayEnough.Size = new System.Drawing.Size(73, 21);
-            this.btnPayEnough.TabIndex = 19;
-            this.btnPayEnough.Text = "Pay Enough";
-            this.btnPayEnough.Click += new System.EventHandler(this.btnPayEnough_Click);
-            // 
-            // txtClientMoney
-            // 
-            this.txtClientMoney.Location = new System.Drawing.Point(136, 178);
-            this.txtClientMoney.Name = "txtClientMoney";
-            this.txtClientMoney.Size = new System.Drawing.Size(180, 21);
-            this.txtClientMoney.TabIndex = 20;
-            this.txtClientMoney.TextChanged += new System.EventHandler(this.txtClientMoney_TextChanged);
-            this.txtClientMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClientMoney_KeyPress);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label4.Location = new System.Drawing.Point(158, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 25);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Payment";
             // 
             // txtExtraMoney
             // 
@@ -216,78 +191,122 @@ namespace QuanLyBanHang.BUS
             this.label3.TabIndex = 21;
             this.label3.Text = "Extra money:";
             // 
-            // label4
+            // txtClientMoney
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.label4.Location = new System.Drawing.Point(158, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 25);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Payment";
+            this.txtClientMoney.Location = new System.Drawing.Point(136, 178);
+            this.txtClientMoney.Name = "txtClientMoney";
+            this.txtClientMoney.Size = new System.Drawing.Size(180, 21);
+            this.txtClientMoney.TabIndex = 20;
+            this.txtClientMoney.TextChanged += new System.EventHandler(this.txtClientMoney_TextChanged);
+            this.txtClientMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClientMoney_KeyPress);
             // 
-            // btnPayment
+            // btnPayEnough
             // 
-            this.btnPayment.CheckedState.Parent = this.btnPayment;
-            this.btnPayment.CustomImages.Parent = this.btnPayment;
-            this.btnPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPayment.ForeColor = System.Drawing.Color.White;
-            this.btnPayment.HoverState.Parent = this.btnPayment;
-            this.btnPayment.Location = new System.Drawing.Point(243, 265);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.ShadowDecoration.Parent = this.btnPayment;
-            this.btnPayment.Size = new System.Drawing.Size(73, 21);
-            this.btnPayment.TabIndex = 24;
-            this.btnPayment.Text = "Payment";
+            this.btnPayEnough.CheckedState.Parent = this.btnPayEnough;
+            this.btnPayEnough.CustomImages.Parent = this.btnPayEnough;
+            this.btnPayEnough.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnPayEnough.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPayEnough.ForeColor = System.Drawing.Color.White;
+            this.btnPayEnough.HoverState.Parent = this.btnPayEnough;
+            this.btnPayEnough.Location = new System.Drawing.Point(136, 142);
+            this.btnPayEnough.Name = "btnPayEnough";
+            this.btnPayEnough.ShadowDecoration.Parent = this.btnPayEnough;
+            this.btnPayEnough.Size = new System.Drawing.Size(73, 21);
+            this.btnPayEnough.TabIndex = 19;
+            this.btnPayEnough.Text = "Pay Enough";
+            this.btnPayEnough.Click += new System.EventHandler(this.btnPayEnough_Click);
             // 
-            // label5
+            // btn500k
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(322, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 15);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "VNĐ";
+            this.btn500k.CheckedState.Parent = this.btn500k;
+            this.btn500k.CustomImages.Parent = this.btn500k;
+            this.btn500k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btn500k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn500k.ForeColor = System.Drawing.Color.White;
+            this.btn500k.HoverState.Parent = this.btn500k;
+            this.btn500k.Location = new System.Drawing.Point(334, 106);
+            this.btn500k.Name = "btn500k";
+            this.btn500k.ShadowDecoration.Parent = this.btn500k;
+            this.btn500k.Size = new System.Drawing.Size(60, 21);
+            this.btn500k.TabIndex = 18;
+            this.btn500k.Text = "500,000";
+            this.btn500k.Click += new System.EventHandler(this.btn500k_Click);
             // 
-            // label6
+            // btn200k
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(322, 181);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 15);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "VNĐ";
+            this.btn200k.CheckedState.Parent = this.btn200k;
+            this.btn200k.CustomImages.Parent = this.btn200k;
+            this.btn200k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btn200k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn200k.ForeColor = System.Drawing.Color.White;
+            this.btn200k.HoverState.Parent = this.btn200k;
+            this.btn200k.Location = new System.Drawing.Point(268, 106);
+            this.btn200k.Name = "btn200k";
+            this.btn200k.ShadowDecoration.Parent = this.btn200k;
+            this.btn200k.Size = new System.Drawing.Size(60, 21);
+            this.btn200k.TabIndex = 17;
+            this.btn200k.Text = "200,000";
+            this.btn200k.Click += new System.EventHandler(this.btn200k_Click);
             // 
-            // label7
+            // btn50k
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(322, 221);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 15);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "VNĐ";
+            this.btn50k.CheckedState.Parent = this.btn50k;
+            this.btn50k.CustomImages.Parent = this.btn50k;
+            this.btn50k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btn50k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn50k.ForeColor = System.Drawing.Color.White;
+            this.btn50k.HoverState.Parent = this.btn50k;
+            this.btn50k.Location = new System.Drawing.Point(136, 106);
+            this.btn50k.Name = "btn50k";
+            this.btn50k.ShadowDecoration.Parent = this.btn50k;
+            this.btn50k.Size = new System.Drawing.Size(60, 21);
+            this.btn50k.TabIndex = 16;
+            this.btn50k.Text = "50,000";
+            this.btn50k.Click += new System.EventHandler(this.btn50k_Click);
             // 
-            // btnClose
+            // btn100k
             // 
-            this.btnClose.CheckedState.Parent = this.btnClose;
-            this.btnClose.CustomImages.Parent = this.btnClose;
-            this.btnClose.FillColor = System.Drawing.Color.Transparent;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.HoverState.Parent = this.btnClose;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.ImageSize = new System.Drawing.Size(17, 17);
-            this.btnClose.Location = new System.Drawing.Point(389, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.ShadowDecoration.Parent = this.btnClose;
-            this.btnClose.Size = new System.Drawing.Size(17, 17);
-            this.btnClose.TabIndex = 28;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btn100k.CheckedState.Parent = this.btn100k;
+            this.btn100k.CustomImages.Parent = this.btn100k;
+            this.btn100k.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btn100k.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn100k.ForeColor = System.Drawing.Color.White;
+            this.btn100k.HoverState.Parent = this.btn100k;
+            this.btn100k.Location = new System.Drawing.Point(202, 106);
+            this.btn100k.Name = "btn100k";
+            this.btn100k.ShadowDecoration.Parent = this.btn100k;
+            this.btn100k.Size = new System.Drawing.Size(60, 21);
+            this.btn100k.TabIndex = 16;
+            this.btn100k.Text = "100,000";
+            this.btn100k.Click += new System.EventHandler(this.btn100k_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Client money:";
+            // 
+            // txtPayment
+            // 
+            this.txtPayment.Enabled = false;
+            this.txtPayment.Location = new System.Drawing.Point(136, 65);
+            this.txtPayment.Name = "txtPayment";
+            this.txtPayment.Size = new System.Drawing.Size(180, 21);
+            this.txtPayment.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Payment:";
             // 
             // fPayment
             // 
@@ -325,5 +344,6 @@ namespace QuanLyBanHang.BUS
         private System.Windows.Forms.TextBox txtExtraMoney;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtClientMoney;
+        private Guna.UI2.WinForms.Guna2Button btnIn;
     }
 }

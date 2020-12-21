@@ -132,13 +132,15 @@ namespace QuanLyBanHang
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dtgvProduct.DataSource = SearchProductByName(txtSearch.Text);
+            dtgvProduct.DataSource = ProductsDAO.Instance.SearchProductByName(txtSearch.Text);
         }
+        /*
         List<Products> SearchProductByName(string productName)
         {
             List<Products> listProduct = ProductsDAO.Instance.SearchProductByName(productName);
             return listProduct;
         }
+        */
 
         private void txtProductId_TextChanged(object sender, EventArgs e)
         {

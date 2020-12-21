@@ -34,17 +34,26 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public List<Client> SearchClientByPhone(string phoneNumber)
+        public Client SearchClientByPhone(string phoneNumber)
         {
-            List<Client> list = new List<Client>();
             string query = string.Format("Select * from Client where phoneNumber = '" + phoneNumber + "'");
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
+            
+            if(data.Rows.Count > 0)
             {
-                Client client = new Client(item);
-                list.Add(client);
+                Client client = new Client();
+                foreach (DataRow row in data.Rows)
+                {
+                    client.PhoneNumber = row["phoneNumber"].ToString();
+                    client.ClientName = row["clientName"].ToString();
+                    client.Address = row["address"].ToString();
+                }
+                return client;
             }
-            return list;
+            else
+            {
+                return null;
+            }
         }
     }
 }

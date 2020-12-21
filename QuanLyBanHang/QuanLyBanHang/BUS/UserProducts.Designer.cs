@@ -278,6 +278,8 @@ namespace QuanLyBanHang
             // 
             // dtgvProduct
             // 
+            this.dtgvProduct.AllowUserToAddRows = false;
+            this.dtgvProduct.AllowUserToDeleteRows = false;
             this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvProduct.Dock = System.Windows.Forms.DockStyle.Bottom;

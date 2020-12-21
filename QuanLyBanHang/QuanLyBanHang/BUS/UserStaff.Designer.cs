@@ -31,29 +31,29 @@ namespace QuanLyBanHang.BUS
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.txtStaffName = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.rdMale = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbbProductType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtProductId = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtStaffId = new System.Windows.Forms.TextBox();
+            this.dtgrListStaff = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgrListStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,67 +68,74 @@ namespace QuanLyBanHang.BUS
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.txtStaffName);
+            this.panel2.Controls.Add(this.txtSearch);
+            this.panel2.Controls.Add(this.dtpDateOfBirth);
+            this.panel2.Controls.Add(this.rdFemale);
+            this.panel2.Controls.Add(this.rdMale);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtPhoneNumber);
             this.panel2.Controls.Add(this.btnRefesh);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cbbProductType);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtPrice);
+            this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtProductId);
+            this.panel2.Controls.Add(this.txtStaffId);
             this.panel2.Location = new System.Drawing.Point(16, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(710, 163);
             this.panel2.TabIndex = 4;
             // 
-            // textBox2
+            // txtStaffName
             // 
-            this.textBox2.Location = new System.Drawing.Point(271, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 20);
-            this.textBox2.TabIndex = 38;
+            this.txtStaffName.Location = new System.Drawing.Point(146, 37);
+            this.txtStaffName.Name = "txtStaffName";
+            this.txtStaffName.Size = new System.Drawing.Size(172, 20);
+            this.txtStaffName.TabIndex = 39;
             // 
-            // dateTimePicker1
+            // txtSearch
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 68);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker1.TabIndex = 37;
+            this.txtSearch.Location = new System.Drawing.Point(271, 135);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(172, 20);
+            this.txtSearch.TabIndex = 38;
             // 
-            // radioButton2
+            // dtpDateOfBirth
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(542, 15);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 36;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(146, 68);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(88, 20);
+            this.dtpDateOfBirth.TabIndex = 37;
             // 
-            // radioButton1
+            // rdFemale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(458, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 35;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdFemale.AutoSize = true;
+            this.rdFemale.Location = new System.Drawing.Point(542, 15);
+            this.rdFemale.Name = "rdFemale";
+            this.rdFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdFemale.TabIndex = 36;
+            this.rdFemale.Text = "Female";
+            this.rdFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdMale
+            // 
+            this.rdMale.AutoSize = true;
+            this.rdMale.Checked = true;
+            this.rdMale.Location = new System.Drawing.Point(458, 15);
+            this.rdMale.Name = "rdMale";
+            this.rdMale.Size = new System.Drawing.Size(48, 17);
+            this.rdMale.TabIndex = 35;
+            this.rdMale.TabStop = true;
+            this.rdMale.Text = "Male";
+            this.rdMale.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -140,12 +147,12 @@ namespace QuanLyBanHang.BUS
             this.label7.TabIndex = 34;
             this.label7.Text = "Gender:";
             // 
-            // textBox1
+            // txtPhoneNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(458, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 33;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(458, 40);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(172, 20);
+            this.txtPhoneNumber.TabIndex = 33;
             // 
             // btnRefesh
             // 
@@ -155,12 +162,13 @@ namespace QuanLyBanHang.BUS
             this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
             this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(383, 98);
+            this.btnRefesh.Location = new System.Drawing.Point(383, 68);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
             this.btnRefesh.Size = new System.Drawing.Size(60, 21);
             this.btnRefesh.TabIndex = 32;
             this.btnRefesh.Text = "Refesh";
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDelete
             // 
@@ -170,12 +178,13 @@ namespace QuanLyBanHang.BUS
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(383, 68);
+            this.btnDelete.Location = new System.Drawing.Point(570, 98);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(60, 21);
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -185,12 +194,13 @@ namespace QuanLyBanHang.BUS
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(570, 68);
+            this.btnUpdate.Location = new System.Drawing.Point(383, 98);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(60, 21);
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -200,12 +210,13 @@ namespace QuanLyBanHang.BUS
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(570, 98);
+            this.btnAdd.Location = new System.Drawing.Point(570, 68);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(60, 21);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -221,6 +232,7 @@ namespace QuanLyBanHang.BUS
             this.btnSearch.Size = new System.Drawing.Size(60, 21);
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label3
             // 
@@ -232,15 +244,6 @@ namespace QuanLyBanHang.BUS
             this.label3.TabIndex = 26;
             this.label3.Text = "Phone:";
             // 
-            // cbbProductType
-            // 
-            this.cbbProductType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbProductType.FormattingEnabled = true;
-            this.cbbProductType.Location = new System.Drawing.Point(146, 37);
-            this.cbbProductType.Name = "cbbProductType";
-            this.cbbProductType.Size = new System.Drawing.Size(172, 22);
-            this.cbbProductType.TabIndex = 25;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -251,12 +254,12 @@ namespace QuanLyBanHang.BUS
             this.label4.TabIndex = 24;
             this.label4.Text = "Staff Name:";
             // 
-            // txtPrice
+            // txtAddress
             // 
-            this.txtPrice.Location = new System.Drawing.Point(146, 97);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(172, 20);
-            this.txtPrice.TabIndex = 4;
+            this.txtAddress.Location = new System.Drawing.Point(146, 97);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(172, 20);
+            this.txtAddress.TabIndex = 4;
             // 
             // label2
             // 
@@ -288,36 +291,39 @@ namespace QuanLyBanHang.BUS
             this.label6.TabIndex = 17;
             this.label6.Text = "Staff ID: ";
             // 
-            // txtProductId
+            // txtStaffId
             // 
-            this.txtProductId.Enabled = false;
-            this.txtProductId.Location = new System.Drawing.Point(146, 10);
-            this.txtProductId.Name = "txtProductId";
-            this.txtProductId.Size = new System.Drawing.Size(88, 20);
-            this.txtProductId.TabIndex = 1;
+            this.txtStaffId.Enabled = false;
+            this.txtStaffId.Location = new System.Drawing.Point(146, 10);
+            this.txtStaffId.Name = "txtStaffId";
+            this.txtStaffId.Size = new System.Drawing.Size(88, 20);
+            this.txtStaffId.TabIndex = 1;
             // 
-            // dataGridView1
+            // dtgrListStaff
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 170);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 263);
-            this.dataGridView1.TabIndex = 1;
+            this.dtgrListStaff.AllowUserToAddRows = false;
+            this.dtgrListStaff.AllowUserToDeleteRows = false;
+            this.dtgrListStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgrListStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgrListStaff.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgrListStaff.Location = new System.Drawing.Point(0, 170);
+            this.dtgrListStaff.Name = "dtgrListStaff";
+            this.dtgrListStaff.Size = new System.Drawing.Size(743, 263);
+            this.dtgrListStaff.TabIndex = 1;
+            this.dtgrListStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrListStaff_CellContentClick);
             // 
             // UserStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgrListStaff);
             this.Controls.Add(this.panel1);
             this.Name = "UserStaff";
             this.Size = new System.Drawing.Size(743, 433);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgrListStaff)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,26 +331,26 @@ namespace QuanLyBanHang.BUS
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgrListStaff;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbbProductType;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtProductId;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox txtStaffId;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.RadioButton rdFemale;
+        private System.Windows.Forms.RadioButton rdMale;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private System.Windows.Forms.TextBox txtStaffName;
     }
 }

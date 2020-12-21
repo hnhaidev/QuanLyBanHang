@@ -237,11 +237,11 @@ go
 
 -- Thêm Bill
 create proc USP_InsertBill
-@clientPhone nvarchar(100)
+@clientPhone nvarchar(100), @staffId int
 as
 begin
 	insert Bill (staffId , phoneNumber ,billDate)
-	values (2, @clientPhone,GETDATE())
+	values (@staffId, @clientPhone , GETDATE())
 end
 go
 
@@ -250,11 +250,30 @@ create proc USP_InsertBillInfo
 @billId int, @productId int, @amount int
 as
 begin
-	
-	begin
-		insert BillInfo(billId, productId, amount)
-		values(@billId, @productId, @amount)
-	end
+	insert BillInfo(billId, productId, amount)
+	values(@billId, @productId, @amount)
 end
 go
 
+-- hiển thị List sản phẩm
+create proc USP_GetListProduct
+@productTypeId int
+as
+begin
+	select * from Product
+	where productTypeId = @productTypeId and productAmount > 0;
+end
+go
+
+-- xuất thông tin billInfo
+create proc USP_ExportBillInfo
+as
+begin
+	declare @maxBillId int;
+	select @maxBillId = MAX(Bill.billId) from Bill;
+
+	select P.productName as N'productName', BI.amount as N'amount', S.staffName as N'staffName', C.clientName as N'clientName'
+	from BillInfo as BI, Product as P, Bill as B, Staff as S, Client as C
+	where BI.billId = @maxBillId and BI.productId = P.productId and B.billId = @maxBillId and B.staffId = S.staffId and B.phoneNumber = C.phoneNumber 
+end
+go
