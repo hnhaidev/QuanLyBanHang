@@ -73,5 +73,20 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public int SumProduct()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("select SUM(productAmount) from Product");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public DataTable ProductAlmostOfStock()
+        {
+            return DataProvider.Instance.ExecuteQuery("select productName as Ten,productAmount as SL from Product where  productAmount <= 25");
+        }
     }
 }

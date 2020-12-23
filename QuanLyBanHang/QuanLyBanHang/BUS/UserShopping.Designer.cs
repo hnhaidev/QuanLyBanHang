@@ -48,9 +48,7 @@ namespace QuanLyBanHang
             this.cbbProductType = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSaveClient = new Guna.UI2.WinForms.Guna2Button();
-            this.nmudPayAmount = new System.Windows.Forms.NumericUpDown();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtClinetName = new System.Windows.Forms.TextBox();
@@ -78,7 +76,6 @@ namespace QuanLyBanHang
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmudAmout)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmudPayAmount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +103,7 @@ namespace QuanLyBanHang
             this.dtgvProductInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvProductInfo.Location = new System.Drawing.Point(0, 0);
             this.dtgvProductInfo.Name = "dtgvProductInfo";
+            this.dtgvProductInfo.ReadOnly = true;
             this.dtgvProductInfo.Size = new System.Drawing.Size(743, 214);
             this.dtgvProductInfo.TabIndex = 0;
             // 
@@ -113,26 +111,31 @@ namespace QuanLyBanHang
             // 
             this.productId.HeaderText = "Mã Sản Phẩm";
             this.productId.Name = "productId";
+            this.productId.ReadOnly = true;
             // 
             // productName
             // 
             this.productName.HeaderText = "Tên Sản Phẩm";
             this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
             // 
             // amount
             // 
             this.amount.HeaderText = "Số Lượng";
             this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
             // 
             // price
             // 
             this.price.HeaderText = "Đơn Giá";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // salePrice
             // 
             this.salePrice.HeaderText = "Thành Tiền";
             this.salePrice.Name = "salePrice";
+            this.salePrice.ReadOnly = true;
             // 
             // panel4
             // 
@@ -256,9 +259,7 @@ namespace QuanLyBanHang
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.Controls.Add(this.btnSaveClient);
-            this.panel3.Controls.Add(this.nmudPayAmount);
             this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txtAddress);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtClinetName);
@@ -286,24 +287,6 @@ namespace QuanLyBanHang
             this.btnSaveClient.Text = "Save";
             this.btnSaveClient.Click += new System.EventHandler(this.btnSaveClient_Click);
             // 
-            // nmudPayAmount
-            // 
-            this.nmudPayAmount.Enabled = false;
-            this.nmudPayAmount.Location = new System.Drawing.Point(107, 87);
-            this.nmudPayAmount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmudPayAmount.Name = "nmudPayAmount";
-            this.nmudPayAmount.Size = new System.Drawing.Size(50, 21);
-            this.nmudPayAmount.TabIndex = 19;
-            this.nmudPayAmount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // btnSearch
             // 
             this.btnSearch.CheckedState.Parent = this.btnSearch;
@@ -319,16 +302,6 @@ namespace QuanLyBanHang
             this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "Search";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 89);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 15);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Pay Amount: ";
             // 
             // txtAddress
             // 
@@ -584,7 +557,6 @@ namespace QuanLyBanHang
             ((System.ComponentModel.ISupportInitialize)(this.nmudAmout)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmudPayAmount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -611,9 +583,7 @@ namespace QuanLyBanHang
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         private Guna.UI2.WinForms.Guna2Button btnPay;
-        private System.Windows.Forms.NumericUpDown nmudPayAmount;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtgvProductInfo;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,14 +81,10 @@ namespace QuanLyBanHang.BUS
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            fExportBill fExportBill = new fExportBill();
-            fExportBill.Show();
-            this.Close();
         }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            /*
             PrintDialog printDialog = new PrintDialog();
 
             PrintDocument printDocument = new PrintDocument();
@@ -106,33 +103,34 @@ namespace QuanLyBanHang.BUS
 
             }
             Close();
-            */
         }
 
-        /*
         public void CreateReceipt(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             //--------------------------------------------//
-            int total = 0;
-            float cash = float.Parse(txtClientMoney.Text);
-            float change = 0f;
+            string lbtenshop = "Cửa Hàng Điện Máy NGUYỄN KIM";
+            string lbdiachi = "Q9";
+            string lbSDT = "01010101";
+
+            double cash = double.Parse(txtClientMoney.Text);
+            double change = 0;
 
             //this prints the reciept
             Graphics graphic = e.Graphics;
 
             Font font = new Font("Courier New", 12); //must use a mono spaced font as the spaces need to line up
 
-            float fontHeight = font.GetHeight();
+            double fontHeight = font.GetHeight();
 
             int startX = 10;
             int startY = 10;
             int offset = 40;
 
-            //graphic.DrawString(lbtenshop.Text, new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
+            graphic.DrawString(lbtenshop, new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
 
-            //graphic.DrawString(lbdiachi.Text, font, new SolidBrush(Color.Black), startX, 40);
+            graphic.DrawString(lbdiachi, font, new SolidBrush(Color.Black), startX, 40);
 
-            //graphic.DrawString(lbSDT.Text, font, new SolidBrush(Color.Black), startX, 60);
+            graphic.DrawString(lbSDT, font, new SolidBrush(Color.Black), startX, 60);
 
             offset = offset + 50;
             string top = "Sản phẩm".PadRight(21) + "SL".PadRight(10) + "Giá".PadRight(10);
@@ -142,27 +140,25 @@ namespace QuanLyBanHang.BUS
             offset = offset + (int)fontHeight + 5; //make the spacing consistent
 
 
-            float totalprice = 0f;
-
-            foreach (DataRow row in listBox2.Items)
+            double totalprice = 0;
+            foreach (DataRow row in BillDAO.Instance.PrintBill().Rows)
             {
-                var items = item.Split('/');
-                string Ltensp = items[0].ToString();
-                int Lsoluongsp = int.Parse(items[1].ToString());
-                float Lgiasp = float.Parse(items[2].ToString());
+                string productName = row["Tên Sản Phẩm"].ToString();
+                int amount = (int)row["Số Lượng"];
+                double payMoney = (double)row["Thành Tiền"];
                 //    MessageBox.Show(productPrice.ToString());
                 //create the string to print on the reciept
                 //  string productDescription = item;
                 //string productTotal = item.Substring(item.Length - 6, 6);
-                float productTotal = float.Parse(txtTTOK.Text);
+                double productTotal = double.Parse(txtPayment.Text);
                 //   float productPrice = float.Parse(item.Substring(item.Length - 5, 5));
 
                 //totalprice += productPrice;
                 totalprice = productTotal;
 
-                string ten = Ltensp;
-                string dongia = Lgiasp.ToString();
-                string slsp = Lsoluongsp.ToString();
+                string ten = productName;
+                string dongia = payMoney.ToString();
+                string slsp = amount.ToString();
                 graphic.DrawString(ten, font, new SolidBrush(Color.Black), startX, startY + offset);
                 graphic.DrawString(slsp, font, new SolidBrush(Color.Black), 230, startY + offset);
                 graphic.DrawString(dongia, font, new SolidBrush(Color.Black), 320, startY + offset);
@@ -178,7 +174,6 @@ namespace QuanLyBanHang.BUS
             offset = offset + 20; //make some room so that the total stands out.
 
             graphic.DrawString("Tổng cộng ".PadRight(30) + totalprice.ToString("###,###"), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
-
             offset = offset + 30; //make some room so that the total stands out.
             graphic.DrawString("Tiền khách đưa ".PadRight(30) + cash.ToString("###,###"), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + 15;
@@ -187,6 +182,5 @@ namespace QuanLyBanHang.BUS
             graphic.DrawString(lbLoichao.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + 15;
         }
-        */
     }
 }

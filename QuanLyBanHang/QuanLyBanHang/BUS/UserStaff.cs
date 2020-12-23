@@ -76,6 +76,7 @@ namespace QuanLyBanHang.BUS
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(txtStaffId.Text);
             string staffName = txtStaffName.Text;
             DateTime dateOfBirth = dtpDateOfBirth.Value;
             string address = txtAddress.Text;
@@ -90,7 +91,7 @@ namespace QuanLyBanHang.BUS
                 gender = false;
             }
 
-            UpdateStaff(staffName, dateOfBirth, address, phoneNumber, gender);
+            UpdateStaff(id, staffName, dateOfBirth, address, phoneNumber, gender);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -123,9 +124,9 @@ namespace QuanLyBanHang.BUS
                 MessageBox.Show("Thêm nhân viên lỗi !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void UpdateStaff(string staffName, DateTime dateOfBirth, string address, string phoneNumber, bool gender)
+        void UpdateStaff(int id, string staffName, DateTime dateOfBirth, string address, string phoneNumber, bool gender)
         {
-            if (StaffDAO.Instance.UpdateStaff(staffName, dateOfBirth, address, phoneNumber, gender))
+            if (StaffDAO.Instance.UpdateStaff(id, staffName, dateOfBirth, address, phoneNumber, gender))
             {
                 MessageBox.Show("Sửa nhân viên thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

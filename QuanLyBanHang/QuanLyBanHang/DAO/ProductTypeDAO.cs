@@ -50,5 +50,16 @@ namespace QuanLyBanHang.DAO
             }
             return productType;
         }
+        public int SumProductType()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("select Count(ProductTypeId) from ProductType");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

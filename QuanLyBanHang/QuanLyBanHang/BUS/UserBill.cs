@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace QuanLyBanHang
         public UserBill()
         {
             InitializeComponent();
+            LoadBIll();
+        }
+        void LoadBIll()
+        {
+            dtgrBill.DataSource = BillDAO.Instance.GetListBill();
         }
     }
 }

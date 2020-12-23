@@ -104,7 +104,7 @@ namespace QuanLyBanHang
                 txtClinetName.Enabled = false;
                 txtClinetPhone.Enabled = false;
                 btnSaveClient.Enabled = false;
-                nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
+              //  nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
             }
             else
             {
@@ -122,7 +122,7 @@ namespace QuanLyBanHang
             txtClinetPhone.Enabled = false;
             txtAddress.Enabled = false;
             txtClinetName.Enabled = false;
-            nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
+           // nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
 
             InsertClient(phoneNumber, clientName, address);
         }

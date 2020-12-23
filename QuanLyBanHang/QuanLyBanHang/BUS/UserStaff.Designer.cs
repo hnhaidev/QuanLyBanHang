@@ -308,6 +308,7 @@ namespace QuanLyBanHang.BUS
             this.dtgrListStaff.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgrListStaff.Location = new System.Drawing.Point(0, 170);
             this.dtgrListStaff.Name = "dtgrListStaff";
+            this.dtgrListStaff.ReadOnly = true;
             this.dtgrListStaff.Size = new System.Drawing.Size(743, 263);
             this.dtgrListStaff.TabIndex = 1;
             this.dtgrListStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrListStaff_CellContentClick);

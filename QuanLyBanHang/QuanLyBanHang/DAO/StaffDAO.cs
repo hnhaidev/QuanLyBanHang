@@ -32,10 +32,10 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { staffName, dateOfBirth , address, phoneNumber , gender });
             return result > 0;
         }
-        public bool UpdateStaff(string staffName, DateTime dateOfBirth, string address, string phoneNumber, bool gender)
+        public bool UpdateStaff(int id, string staffName, DateTime dateOfBirth, string address, string phoneNumber, bool gender)
         {
-            string query = "USP_UpdateStaff @staffName , @dateOfBirth , @address , @phoneNumber , @gender ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { staffName, dateOfBirth, address, phoneNumber, gender });
+            string query = "exec USP_UpdateStaff @id , @staffName , @dateOfBirth , @address , @phoneNumber , @gender ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id , staffName, dateOfBirth, address, phoneNumber, gender });
             return result > 0;
         }
         public bool DeleteStaff(int id)
@@ -48,6 +48,17 @@ namespace QuanLyBanHang.DAO
         {
             string query = string.Format("USP_SearchStaffByName @staffName");
             return DataProvider.Instance.ExecuteQuery(query, new object[] { staffName });
+        }
+        public int SumStaff()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("select Count(staffId) from Staff");
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }
