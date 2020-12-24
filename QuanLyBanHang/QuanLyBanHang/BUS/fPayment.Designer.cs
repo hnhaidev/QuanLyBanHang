@@ -91,7 +91,7 @@ namespace QuanLyBanHang.BUS
             this.btnIn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.HoverState.Parent = this.btnIn;
-            this.btnIn.Location = new System.Drawing.Point(136, 265);
+            this.btnIn.Location = new System.Drawing.Point(243, 265);
             this.btnIn.Name = "btnIn";
             this.btnIn.ShadowDecoration.Parent = this.btnIn;
             this.btnIn.Size = new System.Drawing.Size(73, 21);
@@ -154,7 +154,7 @@ namespace QuanLyBanHang.BUS
             this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.HoverState.Parent = this.btnPayment;
-            this.btnPayment.Location = new System.Drawing.Point(243, 265);
+            this.btnPayment.Location = new System.Drawing.Point(136, 265);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.ShadowDecoration.Parent = this.btnPayment;
             this.btnPayment.Size = new System.Drawing.Size(73, 21);

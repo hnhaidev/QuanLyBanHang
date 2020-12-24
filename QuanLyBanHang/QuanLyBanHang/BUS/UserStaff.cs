@@ -70,8 +70,27 @@ namespace QuanLyBanHang.BUS
             {
                 gender = false;
             }
-
-            InsertStaff(staffName, dateOfBirth, address, phoneNumber, gender);
+            if(txtStaffName.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập Họ Tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(dtpDateOfBirth.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh không được quá ngày hiện tại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtAddress.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(txtPhoneNumber.Text.Trim().Length != 10)
+            {
+                MessageBox.Show("SĐT phải đủ 10 chữ số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                InsertStaff(staffName, dateOfBirth, address, phoneNumber, gender);
+            }
+            LoadStaff();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -90,15 +109,45 @@ namespace QuanLyBanHang.BUS
             {
                 gender = false;
             }
-
-            UpdateStaff(id, staffName, dateOfBirth, address, phoneNumber, gender);
+            if(txtStaffId.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần sửa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtStaffName.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập Họ Tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dtpDateOfBirth.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh không được quá ngày hiện tại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtAddress.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtPhoneNumber.Text.Trim().Length != 10)
+            {
+                MessageBox.Show("SĐT phải đủ 10 chữ số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                UpdateStaff(id, staffName, dateOfBirth, address, phoneNumber, gender);
+            }
+            LoadStaff();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = int.Parse(txtStaffId.Text);
-
-            DeleteStaff(id);
+            if(txtStaffId.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần sửa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DeleteStaff(id);
+            }
+            LoadStaff();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -144,6 +193,14 @@ namespace QuanLyBanHang.BUS
             else
             {
                 MessageBox.Show("Xóa nhân viên lỗi !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
             }
         }
     }

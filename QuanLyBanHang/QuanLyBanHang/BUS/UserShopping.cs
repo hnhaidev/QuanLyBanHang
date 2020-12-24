@@ -104,7 +104,6 @@ namespace QuanLyBanHang
                 txtClinetName.Enabled = false;
                 txtClinetPhone.Enabled = false;
                 btnSaveClient.Enabled = false;
-              //  nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
             }
             else
             {
@@ -118,19 +117,49 @@ namespace QuanLyBanHang
             string phoneNumber = txtClinetPhone.Text;
             string clientName = txtClinetName.Text;
             string address = txtAddress.Text;
+            Client client = SearchClientByPhone(phoneNumber);
 
-            txtClinetPhone.Enabled = false;
-            txtAddress.Enabled = false;
-            txtClinetName.Enabled = false;
-           // nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
+            // nmudPayAmount.Value = BillDAO.Instance.CountClientPay(phoneNumber);
+            if (txtClinetPhone.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtClinetPhone.Text.Trim().Length != 10)
+            {
+                MessageBox.Show("SĐT Phải 10 chữ số !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(client !=  null)
+            {
+                UpdateClient(phoneNumber, clientName, address);
 
-            InsertClient(phoneNumber, clientName, address);
+                txtAddress.Enabled = false;
+                txtClinetName.Enabled = false;
+                txtClinetPhone.Enabled = false;
+            }
+            else
+            {
+                txtClinetPhone.Enabled = false;
+                txtAddress.Enabled = false;
+                txtClinetName.Enabled = false;
+                InsertClient(phoneNumber, clientName, address);
+            }
         }
         void InsertClient(string phoneNumber, string clientName, string address)
         {
             if (ClientDAO.Instance.InsertClient(phoneNumber, clientName, address)) 
             {
                 MessageBox.Show("Lưu thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lưu không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        void UpdateClient(string phoneNumber, string clientName, string address)
+        {
+            if (ClientDAO.Instance.UpdateClient(phoneNumber, clientName, address))
+            {
+                MessageBox.Show("SĐT đã tồn tại và đã Cập nhật lại thông tin khách hàng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -212,6 +241,13 @@ namespace QuanLyBanHang
         }
 
         //---------------Không cho người dùng nhập chữ ----------------//
+        private void txtClinetPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+        }
         private void txtDisCount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
@@ -253,10 +289,11 @@ namespace QuanLyBanHang
                 //----------- Chuyển trang -----------//
                 fPayment fPayment = new fPayment();
                 fPayment.ShowDialog();
+                Refesh();
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập và lưu thông tin khách hàng để thực hiện tiếp !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập và lưu thông tin khách hàng để thực hiện tiếp !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -273,14 +310,24 @@ namespace QuanLyBanHang
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
+            Refesh();
+        }
+        void Refesh()
+        {
             txtAddress.Enabled = true;
             txtClinetName.Enabled = true;
             txtClinetPhone.Enabled = true;
             btnSaveClient.Enabled = true;
+            txtPercent.Enabled = true;
+            txtDisCount.Enabled = true;
 
             txtAddress.Text = "";
             txtClinetName.Text = "";
             txtClinetPhone.Text = "";
+            txtSumPrice.Text = "";
+            txtPay.Text = "";
+            txtPercent.Text = "";
+            txtDisCount.Text = "";
 
             dtgvProductInfo.Rows.Clear();
             dtgvProductInfo.Refresh();

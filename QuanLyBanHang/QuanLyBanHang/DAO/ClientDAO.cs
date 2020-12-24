@@ -28,7 +28,7 @@ namespace QuanLyBanHang.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateClient()
+        public bool UpdateClient(string phoneNumber, string clientName, string address)
         {
             string query = "";
             int result = DataProvider.Instance.ExecuteNonQuery(query);

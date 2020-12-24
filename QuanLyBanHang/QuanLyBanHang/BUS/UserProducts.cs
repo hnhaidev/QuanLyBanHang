@@ -57,8 +57,26 @@ namespace QuanLyBanHang
             int productTypeId = (cbbProductType.SelectedItem as ProductType).ProductTypeId;
             float productPrice = (float)Convert.ToDouble(txtPrice.Text);
             int productAmount = (int)nmudProductAmount.Value;
-
-            InsertProduct(productName, productTypeId, productPrice, productAmount);
+            if(txtProductId.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng refesh để thực hiện chức năng này !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(txtProductName.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập tên sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtPrice.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập giá sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (nmudProductAmount.Value == 0)
+            {
+                MessageBox.Show("Vui lòng nhập số lượng sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                InsertProduct(productName, productTypeId, productPrice, productAmount);
+            }
         }
 
         void InsertProduct(string productName, int productTypeId, float productPrice, int productAmount)
@@ -76,15 +94,29 @@ namespace QuanLyBanHang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(txtProductId.Text.Trim().Length > 0)
+            if(txtProductId.Text.Trim().Length < 1)
             {
                 int productId = Convert.ToInt32(txtProductId.Text);
                 string productName = txtProductName.Text;
                 int productTypeId = (cbbProductType.SelectedItem as ProductType).ProductTypeId;
                 float productPrice = (float)Convert.ToDouble(txtPrice.Text);
                 int productAmount = (int)nmudProductAmount.Value;
-
-                UpdateProduct(productId, productName, productTypeId, productPrice, productAmount);
+                if (txtProductName.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("Vui lòng nhập tên sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtPrice.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("Vui lòng nhập giá sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (nmudProductAmount.Value == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    UpdateProduct(productId, productName, productTypeId, productPrice, productAmount);
+                }
             }
             else
             {
@@ -107,7 +139,7 @@ namespace QuanLyBanHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductId.Text.Trim().Length > 0)
+            if (txtProductId.Text.Trim().Length < 1)
             {
                 int productId = Convert.ToInt32(txtProductId.Text);
                 DeleteProduct(productId);

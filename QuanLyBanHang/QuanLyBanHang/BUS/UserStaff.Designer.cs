@@ -153,6 +153,7 @@ namespace QuanLyBanHang.BUS
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(172, 20);
             this.txtPhoneNumber.TabIndex = 33;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // btnRefesh
             // 

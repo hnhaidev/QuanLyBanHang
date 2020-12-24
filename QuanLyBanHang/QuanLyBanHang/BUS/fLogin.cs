@@ -24,7 +24,15 @@ namespace QuanLyBanHang
         {
             string userName = txtUseName.Text;
             string passWord = txtPassword.Text;
-            if (CheckLogin(userName, passWord))
+            if(userName.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (passWord.Trim().Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (CheckLogin(userName, passWord))
             {
                 Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
                 staffID = loginAccount.StaffId;
@@ -54,6 +62,16 @@ namespace QuanLyBanHang
                 default:
                     break;
             }
+        }
+
+        private void txtUseName_Click(object sender, EventArgs e)
+        {
+            txtUseName.Clear();
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Clear();
         }
     }
 }

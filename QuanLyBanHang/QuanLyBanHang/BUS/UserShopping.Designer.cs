@@ -346,7 +346,7 @@ namespace QuanLyBanHang
             this.txtClinetPhone.Name = "txtClinetPhone";
             this.txtClinetPhone.Size = new System.Drawing.Size(147, 20);
             this.txtClinetPhone.TabIndex = 7;
-            this.txtClinetPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClinetPhone_KeyDown);
+            this.txtClinetPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClinetPhone_KeyPress);
             // 
             // label1
             // 

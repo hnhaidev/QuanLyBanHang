@@ -124,25 +124,42 @@ namespace QuanLyBanHang
         {
             if(txtUserName.Enabled == false)
             {
-                int staffId = (int)Convert.ToInt32(txtStaffId.Text);
-                string userName = txtUserName.Text;
-                string passWord = txtPassWord.Text;
-                int accountType = 0;
-                if (rdoManage.Checked == true)
+                if (txtUserName.Text.Trim().Length < 1)
                 {
-                    accountType = 1;
+                    MessageBox.Show("Vui lòng nhập tên tài khoản !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    accountType = 0;
-                }
-                if (txtPassWord.Text == txtReconfirmPW.Text)
-                {
-                    UpdateAccount(staffId, userName, passWord, accountType);
-                }
-                else
-                {
-                    MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    int staffId = (int)Convert.ToInt32(txtStaffId.Text);
+                    string userName = txtUserName.Text;
+                    string passWord = txtPassWord.Text;
+                    int accountType = 0;
+                    if (rdoManage.Checked == true)
+                    {
+                        accountType = 1;
+                    }
+                    else
+                    {
+                        accountType = 0;
+                    }
+
+                    // Kiểm tra nhập
+                    if (txtStaffId.Text.Trim().Length < 1)
+                    {
+                        MessageBox.Show("Vui lòng nhập Mã nhân viên !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (txtPassWord.Text.Trim().Length < 1)
+                    {
+                        MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (txtPassWord.Text != txtReconfirmPW.Text)
+                    {
+                        MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        UpdateAccount(staffId, userName, passWord, accountType);
+                    }
                 }
             }
             else
@@ -160,6 +177,7 @@ namespace QuanLyBanHang
             {
                 MessageBox.Show("Sửa tài khoản thất bại !","Thông báo!",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             LoadAccount();
         }
 
@@ -195,6 +213,7 @@ namespace QuanLyBanHang
             txtPassWord.Text = "";
             txtReconfirmPW.Text = "";
             txtStaffId.Text = "";
+
             LoadAccount();
         }
     }

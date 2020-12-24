@@ -530,3 +530,29 @@ begin
 	where B.staffId = S.staffId and B.phoneNumber = C.phoneNumber
 end
 go
+
+-- Search trên Bill
+create proc USP_SearchBill
+@seacrh nvarchar(100)
+as
+begin
+	declare @id int
+	select @id = billId from Bill where ( billId like @seacrh or Bill.phoneNumber like @seacrh)
+
+	select B.billId as N'Mã Bill', C.clientName as N'Tên Khách Hàng', S.staffName as N'Tên Nhân Viên',
+	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Tổng Tiền'
+	from Bill as B, Staff as S, Client as C
+	where B.staffId = S.staffId and B.phoneNumber = C.phoneNumber and B.billId = @id
+end
+go
+
+create proc USP_SearchBillByDay
+@seacrh Date
+as
+begin
+	select B.billId as N'Mã Bill', C.clientName as N'Tên Khách Hàng', S.staffName as N'Tên Nhân Viên',
+	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Tổng Tiền'
+	from Bill as B, Staff as S, Client as C
+	where B.staffId = S.staffId and B.phoneNumber = C.phoneNumber and B.billDate like @seacrh
+end
+go
