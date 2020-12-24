@@ -266,7 +266,16 @@ namespace QuanLyBanHang
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if(txtClinetPhone.Enabled == false)
+            if(txtClinetPhone.Enabled == true)
+            {
+                MessageBox.Show("Vui lòng nhập và lưu thông tin khách hàng để thực hiện tiếp !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+            else if(dtgvProductInfo.Rows.Count < 1)
+            {
+                MessageBox.Show("Vui lòng thêm sản phẩm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 int productID;
                 int amount;
@@ -290,10 +299,6 @@ namespace QuanLyBanHang
                 fPayment fPayment = new fPayment();
                 fPayment.ShowDialog();
                 Refesh();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập và lưu thông tin khách hàng để thực hiện tiếp !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

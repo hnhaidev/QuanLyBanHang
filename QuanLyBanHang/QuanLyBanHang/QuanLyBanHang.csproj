@@ -68,16 +68,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\fPayment.cs">
+    <Compile Include="GUI\fPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BUS\fPayment.Designer.cs">
+    <Compile Include="GUI\fPayment.Designer.cs">
       <DependentUpon>fPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\UserStaff.cs">
+    <Compile Include="GUI\UserStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserStaff.Designer.cs">
+    <Compile Include="GUI\UserStaff.Designer.cs">
       <DependentUpon>UserStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
@@ -96,66 +96,66 @@
     <Compile Include="DTO\ProductType.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\BillInfo.cs" />
-    <Compile Include="BUS\fMain.cs">
+    <Compile Include="GUI\fMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BUS\fMain.Designer.cs">
+    <Compile Include="GUI\fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\fLogin.cs">
+    <Compile Include="GUI\fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BUS\fLogin.Designer.cs">
+    <Compile Include="GUI\fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BUS\UserAccount.cs">
+    <Compile Include="GUI\UserAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserAccount.Designer.cs">
+    <Compile Include="GUI\UserAccount.Designer.cs">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\UserBill.cs">
+    <Compile Include="GUI\UserBill.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserBill.Designer.cs">
+    <Compile Include="GUI\UserBill.Designer.cs">
       <DependentUpon>UserBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\UserHome.cs">
+    <Compile Include="GUI\UserHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserHome.Designer.cs">
+    <Compile Include="GUI\UserHome.Designer.cs">
       <DependentUpon>UserHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\UserProducts.cs">
+    <Compile Include="GUI\UserProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserProducts.Designer.cs">
+    <Compile Include="GUI\UserProducts.Designer.cs">
       <DependentUpon>UserProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\UserShopping.cs">
+    <Compile Include="GUI\UserShopping.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserShopping.Designer.cs">
+    <Compile Include="GUI\UserShopping.Designer.cs">
       <DependentUpon>UserShopping.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\UserStatistical.cs">
+    <Compile Include="GUI\UserStatistical.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BUS\UserStatistical.Designer.cs">
+    <Compile Include="GUI\UserStatistical.Designer.cs">
       <DependentUpon>UserStatistical.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BUS\fMain.resx">
+    <EmbeddedResource Include="GUI\fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\fLogin.resx">
+    <EmbeddedResource Include="GUI\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\fPayment.resx">
+    <EmbeddedResource Include="GUI\fPayment.resx">
       <DependentUpon>fPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\UserStaff.resx">
+    <EmbeddedResource Include="GUI\UserStaff.resx">
       <DependentUpon>UserStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -168,22 +168,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="BUS\UserAccount.resx">
+    <EmbeddedResource Include="GUI\UserAccount.resx">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\UserBill.resx">
+    <EmbeddedResource Include="GUI\UserBill.resx">
       <DependentUpon>UserBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\UserHome.resx">
+    <EmbeddedResource Include="GUI\UserHome.resx">
       <DependentUpon>UserHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\UserProducts.resx">
+    <EmbeddedResource Include="GUI\UserProducts.resx">
       <DependentUpon>UserProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\UserShopping.resx">
+    <EmbeddedResource Include="GUI\UserShopping.resx">
       <DependentUpon>UserShopping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BUS\UserStatistical.resx">
+    <EmbeddedResource Include="GUI\UserStatistical.resx">
       <DependentUpon>UserStatistical.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
