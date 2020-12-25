@@ -136,9 +136,9 @@ go
 
 -- Bảng Account
 insert into Account 
-values (1,'hai001','1962026656160185351301320480154111117132155', 0) 
+values (1,'admin','1962026656160185351301320480154111117132155', 0) 
 insert into Account
-values (2,'admin','1962026656160185351301320480154111117132155',1)
+values (2,'hai001','1962026656160185351301320480154111117132155',1)
 go
 
 -- Bảng ProductType
@@ -289,24 +289,24 @@ go
 
 -- Bảng Client
 insert into Client 
-values ('01',N'Ông Thọ',N'Nghệ An') 
+values ('0377616263',N'Ông Thọ',N'Nghệ An') 
 insert into Client 
-values ('02',N'Ông Phúc',N'Nghệ An') 
+values ('0393949595',N'Ông Phúc',N'Nghệ An') 
 insert into Client 
-values ('03',N'Ông Lộc',N'Nghệ An') 
+values ('0371717171',N'Ông Lộc',N'Nghệ An') 
 insert into Client 
-values ('04',N'Ông Bảo',N'Nghệ An') 
+values ('0472727272',N'Ông Bảo',N'Nghệ An') 
 go
 
 -- Bảng Bill
 insert into Bill
-values (1,'01',GETDATE())
+values (1,'0377616263','2020-12-20')
 insert into Bill
-values (1,'02',GETDATE())
+values (1,'0393949595','2020-12-21')
 insert into Bill
-values (1,'03',GETDATE())
+values (1,'0371717171','2020-12-22')
 insert into Bill
-values (1,'04',GETDATE())
+values (1,'0472727272','2020-12-23')
 go
 
 -- Bảng BillÌno
@@ -336,11 +336,11 @@ end
 go
 
 -- Truy suất Account
-Create proc USP_Account
+create proc USP_Account
 as
 begin
-	select Staff.staffId as N'Mã Nhân Viên', userName as N'Tên Tài Khoản', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
-	,address as N'Địa Chỉ', accountType as N'Quản Lý'
+	select Staff.staffId as N'Staff ID', userName as N'User Name', staffName as N'Staff Name', dateOfBirth as N'Date Of Birth'
+	,address as N'Address', accountType as N'Account Type'
 	from Account, Staff
 	where Account.staffId = Staff.staffId
 end
@@ -350,7 +350,7 @@ go
 create proc USP_Product
 as
 begin
-	select productId as N'Mã Sản Phẩm', productName as N'Tên Sản Phẩm', productPrice as N'Giá', productAmount as 'Số lượng', productTypeId as N'Mã Loại Sản Phẩm'
+	select productId as N'Product ID', productName as N'Product Name', productPrice as N'Price', productAmount as 'Amount', productTypeId as N'Product Type ID'
 	from Product
 end
 go
@@ -394,8 +394,8 @@ Create proc USP_SearchAccount
 @userName nvarchar(100)
 as
 begin
-	select Staff.staffId as N'Mã Nhân Viên', userName as N'Tên Tài Khoản' , staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh'
-	,address as N'Địa Chỉ', accountType as N'Quản Lý'
+	select Staff.staffId as N'Staff ID', userName as N'User Name' , staffName as N'Staff Name', dateOfBirth as N'Date Of Birth'
+	,address as N'Address', accountType as N'Account Type'
 	from Account, Staff
 	where Account.staffId = Staff.staffId and userName = @userName
 end
@@ -432,24 +432,23 @@ end
 go
 
 -- xuất thông tin billInfo
-alter proc USP_ExportBillInfo
+create proc USP_ExportBillInfo
 as
 begin
 	declare @maxBillId int;
 	select @maxBillId = MAX(Bill.billId) from Bill;
 
-	select P.productName as N'Tên Sản Phẩm', BI.amount as N'Số Lượng',(p.productPrice * BI.amount) as N'Thành Tiền'
+	select P.productName as N'Product Name', BI.amount as N'Amount',(p.productPrice * BI.amount) as N'Into Money'
 	from BillInfo as BI, Product as P, Bill as B
 	where BI.billId = @maxBillId and BI.productId = P.productId and B.billId = @maxBillId
 end
 go
-exec USP_ExportBillInfo
 
 -- Hien thi thong tin Staff
 create proc USP_ListStaff
 as
 begin
-	select staffId as N'Mã Nhân Viên', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh', address as N'Quê Quán', phoneNumber as N'Số ĐT', gender as N'Giới Tính'
+	select staffId as N'Staff ID', staffName as N'Staff Name', dateOfBirth as N'Date Of Birth', address as N'Address', phoneNumber as N'Phone Number', gender as N'Gender'
 	from Staff
 end
 go
@@ -480,7 +479,7 @@ create proc USP_SearchStaffByName
 @staffName nvarchar(100)
 as
 begin
-	select staffId as N'Mã Nhân Viên', staffName as N'Tên Nhân Viên', dateOfBirth as N'Ngày Sinh', address as N'Quê Quán', phoneNumber as N'Số ĐT', gender as N'Giới Tính'
+	select staffId as N'Staff ID', staffName as N'Staff Name', dateOfBirth as N'Date Of Birth', address as N'Address', phoneNumber as N'Phone Number', gender as N'Gender'
 	from Staff 
 	where dbo.fuConvertToUnsign1(staffName) LIKE N'%' + dbo.fuConvertToUnsign1(@staffName) + '%'
 end
@@ -491,7 +490,7 @@ create proc USP_SearchProductByName
 @productName nvarchar(100)
 as
 begin
-	select productId as N'Mã Sản Phẩm', productName as N'Tên Sản Phẩm', productPrice as N'Giá', productAmount as 'Số lượng', productTypeId as N'Mã Loại Sản Phẩm' from Product where dbo.fuConvertToUnsign1(productName) LIKE N'%' + dbo.fuConvertToUnsign1(@productName) + '%'
+	select productId as N'Product ID', productName as N'Product Name', productPrice as N'Price', productAmount as 'Amount', productTypeId as N'Product Type ID' from Product where dbo.fuConvertToUnsign1(productName) LIKE N'%' + dbo.fuConvertToUnsign1(@productName) + '%'
 end
 go
 
@@ -503,12 +502,12 @@ create View SumMoneyProduct as
 	where BI.productId = P.productId and B.staffId = S.staffId and B.phoneNumber = C.phoneNumber  and B.billId = BI.billId
 go
 
-alter View UV_SumMoney as
+create View UV_SumMoney as
 select CAST(B.billDate AS DATE) as dayPay,
 	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as moneyPay
 	from Bill as B
 go
-alter proc USP_SumMoneyInDay
+create proc USP_SumMoneyInDay
 @dayPay nvarchar(10)
 as
 begin
@@ -524,8 +523,8 @@ go
 create proc USP_GetListBill
 as
 begin
-	select B.billId as N'Mã Bill', C.clientName as N'Tên Khách Hàng', S.staffName as N'Tên Nhân Viên',
-	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Tổng Tiền'
+	select B.billId as N'Bill ID',C.phoneNumber as N'Client Phone' ,C.clientName as N'Client Name', S.staffName as N'Staff Name',
+	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Sum Money', B.billDate as 'Date Of Purchase'
 	from Bill as B, Staff as S, Client as C
 	where B.staffId = S.staffId and B.phoneNumber = C.phoneNumber
 end
@@ -539,8 +538,8 @@ begin
 	declare @id int
 	select @id = billId from Bill where ( billId like @seacrh or Bill.phoneNumber like @seacrh)
 
-	select B.billId as N'Mã Bill', C.clientName as N'Tên Khách Hàng', S.staffName as N'Tên Nhân Viên',
-	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Tổng Tiền'
+	select B.billId as N'Bill ID', C.phoneNumber as N'Client Phone' , C.clientName as N'Client Name', S.staffName as N'Staff Name',
+	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Sum Money', B.billDate as 'Date Of Purchase'
 	from Bill as B, Staff as S, Client as C
 	where B.staffId = S.staffId and B.phoneNumber = C.phoneNumber and B.billId = @id
 end
@@ -550,9 +549,19 @@ create proc USP_SearchBillByDay
 @seacrh Date
 as
 begin
-	select B.billId as N'Mã Bill', C.clientName as N'Tên Khách Hàng', S.staffName as N'Tên Nhân Viên',
-	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Tổng Tiền'
+	select B.billId as N'Bill ID', C.phoneNumber as N'Client Phone' , C.clientName as N'Client Name', S.staffName as N'Staff Name',
+	(select SUM(SUMMoney) from SumMoneyProduct  Where SumMoneyProduct.billId = B.billId) as N'Sum Money', B.billDate as 'Date Of Purchase'
 	from Bill as B, Staff as S, Client as C
 	where B.staffId = S.staffId and B.phoneNumber = C.phoneNumber and B.billDate like @seacrh
+end
+go
+
+create proc USP_ListBillInfo 
+@idBill int
+as
+begin
+	select P.productName as 'Product Name', B.amount as 'Amount',p.productPrice as 'Price' ,(P.productPrice * B.amount) as 'Into Money'
+	from BillInfo as B, Product as P
+	where B.billId = @idBill and B.productId = P.productId
 end
 go

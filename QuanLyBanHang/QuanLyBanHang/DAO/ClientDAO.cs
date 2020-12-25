@@ -30,7 +30,7 @@ namespace QuanLyBanHang.DAO
         }
         public bool UpdateClient(string phoneNumber, string clientName, string address)
         {
-            string query = "";
+            string query = string.Format("Update Client set phoneNumber = '{0}' ,  clientName = '{2}' , address = '{3}' ", phoneNumber, clientName, address);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

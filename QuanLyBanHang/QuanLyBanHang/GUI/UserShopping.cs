@@ -161,6 +161,10 @@ namespace QuanLyBanHang
             {
                 MessageBox.Show("SĐT đã tồn tại và đã Cập nhật lại thông tin khách hàng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xẩy ra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtClinetPhone_KeyDown(object sender, KeyEventArgs e)

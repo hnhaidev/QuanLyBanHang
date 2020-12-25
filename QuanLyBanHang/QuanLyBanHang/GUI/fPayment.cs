@@ -156,9 +156,9 @@ namespace QuanLyBanHang.BUS
             double totalprice = 0;
             foreach (DataRow row in BillDAO.Instance.PrintBill().Rows)
             {
-                string productName = row["Tên Sản Phẩm"].ToString();
-                int amount = (int)row["Số Lượng"];
-                double payMoney = (double)row["Thành Tiền"];
+                string productName = row["Product Name"].ToString();
+                int amount = (int)row["Amount"];
+                double payMoney = (double)row["Into Money"];
                 //    MessageBox.Show(productPrice.ToString());
                 //create the string to print on the reciept
                 //  string productDescription = item;

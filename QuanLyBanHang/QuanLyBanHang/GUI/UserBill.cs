@@ -119,10 +119,10 @@ namespace QuanLyBanHang
             int row = e.RowIndex;
             if (row < 0) return;
             dtgrBill.Rows[row].Selected = true;
-            idBill = (int)dtgrBill.Rows[row].Cells["Mã Bill"].Value;
-            ClientName = dtgrBill.Rows[row].Cells["Tên Khách Hàng"].Value.ToString();
-            StaffName = dtgrBill.Rows[row].Cells["Tên Nhân Viên"].Value.ToString();
-            SumMoney = (double)dtgrBill.Rows[row].Cells["Tổng Tiền"].Value;
+            idBill = (int)dtgrBill.Rows[row].Cells["Bill ID"].Value;
+            ClientName = dtgrBill.Rows[row].Cells["Client Name"].Value.ToString();
+            StaffName = dtgrBill.Rows[row].Cells["Staff Name"].Value.ToString();
+            SumMoney = (double)dtgrBill.Rows[row].Cells["Sum Money"].Value;
 
             fBillInfo f = new fBillInfo();
             f.Show();

@@ -31,11 +31,6 @@ namespace QuanLyBanHang
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvProductInfo = new System.Windows.Forms.DataGridView();
-            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.nmudAmout = new System.Windows.Forms.NumericUpDown();
@@ -71,6 +66,11 @@ namespace QuanLyBanHang
             this.txtPercent = new System.Windows.Forms.TextBox();
             this.txtSumPrice = new System.Windows.Forms.TextBox();
             this.SumPrice = new System.Windows.Forms.Label();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductInfo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -106,36 +106,6 @@ namespace QuanLyBanHang
             this.dtgvProductInfo.ReadOnly = true;
             this.dtgvProductInfo.Size = new System.Drawing.Size(743, 214);
             this.dtgvProductInfo.TabIndex = 0;
-            // 
-            // productId
-            // 
-            this.productId.HeaderText = "Mã Sản Phẩm";
-            this.productId.Name = "productId";
-            this.productId.ReadOnly = true;
-            // 
-            // productName
-            // 
-            this.productName.HeaderText = "Tên Sản Phẩm";
-            this.productName.Name = "productName";
-            this.productName.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Số Lượng";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Đơn Giá";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // salePrice
-            // 
-            this.salePrice.HeaderText = "Thành Tiền";
-            this.salePrice.Name = "salePrice";
-            this.salePrice.ReadOnly = true;
             // 
             // panel4
             // 
@@ -538,6 +508,36 @@ namespace QuanLyBanHang
             this.SumPrice.Size = new System.Drawing.Size(63, 15);
             this.SumPrice.TabIndex = 22;
             this.SumPrice.Text = "Sum Price:";
+            // 
+            // productId
+            // 
+            this.productId.HeaderText = "Product ID";
+            this.productId.Name = "productId";
+            this.productId.ReadOnly = true;
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Product Name";
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // salePrice
+            // 
+            this.salePrice.HeaderText = "Into Money";
+            this.salePrice.Name = "salePrice";
+            this.salePrice.ReadOnly = true;
             // 
             // UserShopping
             // 

@@ -36,10 +36,10 @@ namespace QuanLyBanHang
         }
         void AddFoodBinding()
         {
-            txtProductName.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "Tên Sản Phẩm", true, DataSourceUpdateMode.Never));
-            txtProductId.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "Mã Sản Phẩm", true, DataSourceUpdateMode.Never));
-            txtPrice.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "Giá", true, DataSourceUpdateMode.Never));
-            nmudProductAmount.DataBindings.Add(new Binding("Value", dtgvProduct.DataSource, "Số lượng", true, DataSourceUpdateMode.Never));
+            txtProductName.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "Product Name", true, DataSourceUpdateMode.Never));
+            txtProductId.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "Product ID", true, DataSourceUpdateMode.Never));
+            txtPrice.DataBindings.Add(new Binding("Text", dtgvProduct.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            nmudProductAmount.DataBindings.Add(new Binding("Value", dtgvProduct.DataSource, "Amount", true, DataSourceUpdateMode.Never));
         }
 
         private void btnRefesh_Click(object sender, EventArgs e)
@@ -180,7 +180,7 @@ namespace QuanLyBanHang
             {
                 if (dtgvProduct.SelectedCells.Count > 0)
                 {
-                    int id = (int)dtgvProduct.SelectedCells[0].OwningRow.Cells["Mã Loại Sản Phẩm"].Value;
+                    int id = (int)dtgvProduct.SelectedCells[0].OwningRow.Cells["Product Type ID"].Value;
 
                     ProductType productType = ProductTypeDAO.Instance.GetProductTypeById(id);
 

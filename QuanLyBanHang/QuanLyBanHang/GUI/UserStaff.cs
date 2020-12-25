@@ -29,12 +29,12 @@ namespace QuanLyBanHang.BUS
             if (row < 0) return;
             dtgrListStaff.Rows[row].Selected = true;
 
-            txtStaffName.Text = dtgrListStaff.Rows[row].Cells["Tên Nhân Viên"].Value.ToString();
-            txtStaffId.Text = dtgrListStaff.Rows[row].Cells["Mã Nhân Viên"].Value.ToString();
-            txtAddress.Text = dtgrListStaff.Rows[row].Cells["Quê Quán"].Value.ToString();
-            txtPhoneNumber.Text = dtgrListStaff.Rows[row].Cells["Số ĐT"].Value.ToString();
-            dtpDateOfBirth.Value = (DateTime)(dtgrListStaff.Rows[row].Cells["Ngày Sinh"].Value);
-            if (Convert.ToBoolean(dtgrListStaff.Rows[row].Cells["Giới Tính"].Value) == true)
+            txtStaffName.Text = dtgrListStaff.Rows[row].Cells["Staff Name"].Value.ToString();
+            txtStaffId.Text = dtgrListStaff.Rows[row].Cells["Staff ID"].Value.ToString();
+            txtAddress.Text = dtgrListStaff.Rows[row].Cells["Address"].Value.ToString();
+            txtPhoneNumber.Text = dtgrListStaff.Rows[row].Cells["Phone Number"].Value.ToString();
+            dtpDateOfBirth.Value = (DateTime)(dtgrListStaff.Rows[row].Cells["Date Of Birth"].Value);
+            if (Convert.ToBoolean(dtgrListStaff.Rows[row].Cells["Gender"].Value) == true)
             {
                 rdMale.Checked = true;
             }

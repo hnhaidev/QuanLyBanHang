@@ -31,9 +31,9 @@ namespace QuanLyBanHang
             dtgvAccount.Rows[row].Selected = true;
             txtUserName.Enabled = false;
 
-            txtUserName.Text = dtgvAccount.Rows[row].Cells["Tên Tài Khoản"].Value.ToString();
-            txtStaffId.Text = dtgvAccount.Rows[row].Cells["Mã Nhân Viên"].Value.ToString();
-            int accountType = Convert.ToInt32(dtgvAccount.Rows[row].Cells["Loại Tài Khoản"].Value.ToString());
+            txtUserName.Text = dtgvAccount.Rows[row].Cells["User Name"].Value.ToString();
+            txtStaffId.Text = dtgvAccount.Rows[row].Cells["Staff ID"].Value.ToString();
+            int accountType = Convert.ToInt32(dtgvAccount.Rows[row].Cells["Account Type"].Value.ToString());
             if (accountType == 0)
             {
                 rdoManage.Checked = true;

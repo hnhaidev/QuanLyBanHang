@@ -95,7 +95,6 @@
     <Compile Include="DAO\ProductsDAO.cs" />
     <Compile Include="DAO\ProductTypeDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
-    <Compile Include="DAO\StatisticalDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\Client.cs" />
