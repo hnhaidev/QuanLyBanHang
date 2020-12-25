@@ -36,7 +36,6 @@ namespace QuanLyBanHang.BUS
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnPayment = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtExtraMoney = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@ namespace QuanLyBanHang.BUS
             this.guna2Panel1.Controls.Add(this.label7);
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
-            this.guna2Panel1.Controls.Add(this.btnPayment);
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.txtExtraMoney);
             this.guna2Panel1.Controls.Add(this.label3);
@@ -96,7 +94,7 @@ namespace QuanLyBanHang.BUS
             this.btnIn.ShadowDecoration.Parent = this.btnIn;
             this.btnIn.Size = new System.Drawing.Size(73, 21);
             this.btnIn.TabIndex = 29;
-            this.btnIn.Text = "Invoice Print";
+            this.btnIn.Text = "Print To PDF";
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnClose
@@ -145,22 +143,6 @@ namespace QuanLyBanHang.BUS
             this.label5.Size = new System.Drawing.Size(32, 15);
             this.label5.TabIndex = 25;
             this.label5.Text = "VNĐ";
-            // 
-            // btnPayment
-            // 
-            this.btnPayment.CheckedState.Parent = this.btnPayment;
-            this.btnPayment.CustomImages.Parent = this.btnPayment;
-            this.btnPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btnPayment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnPayment.ForeColor = System.Drawing.Color.White;
-            this.btnPayment.HoverState.Parent = this.btnPayment;
-            this.btnPayment.Location = new System.Drawing.Point(136, 265);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.ShadowDecoration.Parent = this.btnPayment;
-            this.btnPayment.Size = new System.Drawing.Size(73, 21);
-            this.btnPayment.TabIndex = 24;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // label4
             // 
@@ -339,7 +321,6 @@ namespace QuanLyBanHang.BUS
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Button btnPayment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtExtraMoney;
         private System.Windows.Forms.Label label3;

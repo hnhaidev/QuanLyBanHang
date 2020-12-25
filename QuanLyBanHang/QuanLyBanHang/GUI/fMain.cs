@@ -59,25 +59,12 @@ namespace QuanLyBanHang
                 MessageBox.Show("Quản lý mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnShopping_Click(object sender, EventArgs e)
-        {
-            LoadSidePanel(btnShopping);
-            userShopping1.BringToFront();
-        }
-
-        private void btnBill_Click(object sender, EventArgs e)
-        {
-            LoadSidePanel(btnBill);
-            userBill1.BringToFront();
-        }
-
-        private void btnProducts_Click(object sender, EventArgs e)
+        private void btnStaff_Click(object sender, EventArgs e)
         {
             if (loginAccount.AccountType == 0)
             {
-                LoadSidePanel(btnProducts);
-                userProducts1.BringToFront();
+                LoadSidePanel(btnStaff);
+                userStaff1.BringToFront();
             }
             else
             {
@@ -85,10 +72,56 @@ namespace QuanLyBanHang
             }
         }
 
+        private void btnShopping_Click(object sender, EventArgs e)
+        {
+            if((loginAccount.AccountType == 0) || (loginAccount.AccountType == 1))
+            {
+                LoadSidePanel(btnShopping);
+                userShopping1.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Quản lý hoặc Nhân viên bán hàng mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            if ((loginAccount.AccountType == 0) || (loginAccount.AccountType == 2))
+            {
+                LoadSidePanel(btnBill);
+                userBill1.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Quản lý hoặc Kế toán mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            if ((loginAccount.AccountType == 0) || (loginAccount.AccountType == 3))
+            {
+                LoadSidePanel(btnProducts);
+                userProducts1.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Quản lý hoặc Thủ kho mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnStatistical_Click(object sender, EventArgs e)
         {
-            LoadSidePanel(btnStatistical);
-            userStatistical1.BringToFront();
+            if ((loginAccount.AccountType == 0) || (loginAccount.AccountType == 2))
+            {
+                LoadSidePanel(btnStatistical);
+                userStatistical1.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Quản lý hoặc Kế toán mới vào được mục này!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -117,11 +150,6 @@ namespace QuanLyBanHang
                 default:
                     break;
             }
-        }
-        private void btnStaff_Click(object sender, EventArgs e)
-        {
-            LoadSidePanel(btnStaff);
-            userStaff1.BringToFront();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

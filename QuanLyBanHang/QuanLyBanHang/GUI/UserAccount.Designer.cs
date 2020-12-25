@@ -42,13 +42,15 @@ namespace QuanLyBanHang
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtStaffId = new System.Windows.Forms.TextBox();
             this.rdoManage = new System.Windows.Forms.RadioButton();
-            this.rdStaff = new System.Windows.Forms.RadioButton();
+            this.rdoSalesman = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
+            this.rdoAccountant = new System.Windows.Forms.RadioButton();
+            this.radoStocker = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
@@ -66,6 +68,8 @@ namespace QuanLyBanHang
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.radoStocker);
+            this.panel2.Controls.Add(this.rdoAccountant);
             this.panel2.Controls.Add(this.btnRefesh);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnDelete);
@@ -77,7 +81,7 @@ namespace QuanLyBanHang
             this.panel2.Controls.Add(this.txtUserName);
             this.panel2.Controls.Add(this.txtStaffId);
             this.panel2.Controls.Add(this.rdoManage);
-            this.panel2.Controls.Add(this.rdStaff);
+            this.panel2.Controls.Add(this.rdoSalesman);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label5);
@@ -86,7 +90,7 @@ namespace QuanLyBanHang
             this.panel2.Location = new System.Drawing.Point(16, 14);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(710, 143);
+            this.panel2.Size = new System.Drawing.Size(710, 159);
             this.panel2.TabIndex = 2;
             // 
             // btnRefesh
@@ -97,7 +101,7 @@ namespace QuanLyBanHang
             this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
             this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(137, 108);
+            this.btnRefesh.Location = new System.Drawing.Point(137, 129);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
             this.btnRefesh.Size = new System.Drawing.Size(60, 21);
@@ -107,7 +111,7 @@ namespace QuanLyBanHang
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(353, 72);
+            this.txtSearch.Location = new System.Drawing.Point(360, 71);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(210, 20);
@@ -121,7 +125,7 @@ namespace QuanLyBanHang
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(504, 108);
+            this.btnDelete.Location = new System.Drawing.Point(504, 129);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(60, 21);
@@ -137,7 +141,7 @@ namespace QuanLyBanHang
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(385, 108);
+            this.btnUpdate.Location = new System.Drawing.Point(385, 129);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(60, 21);
@@ -153,7 +157,7 @@ namespace QuanLyBanHang
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(260, 108);
+            this.btnAdd.Location = new System.Drawing.Point(260, 129);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(60, 21);
@@ -169,7 +173,7 @@ namespace QuanLyBanHang
             this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(605, 72);
+            this.btnSearch.Location = new System.Drawing.Point(616, 70);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
             this.btnSearch.Size = new System.Drawing.Size(60, 21);
@@ -179,7 +183,7 @@ namespace QuanLyBanHang
             // 
             // txtReconfirmPW
             // 
-            this.txtReconfirmPW.Location = new System.Drawing.Point(485, 41);
+            this.txtReconfirmPW.Location = new System.Drawing.Point(504, 41);
             this.txtReconfirmPW.Name = "txtReconfirmPW";
             this.txtReconfirmPW.Size = new System.Drawing.Size(172, 20);
             this.txtReconfirmPW.TabIndex = 16;
@@ -187,7 +191,7 @@ namespace QuanLyBanHang
             // 
             // txtPassWord
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(485, 15);
+            this.txtPassWord.Location = new System.Drawing.Point(504, 14);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(172, 20);
             this.txtPassWord.TabIndex = 15;
@@ -195,14 +199,14 @@ namespace QuanLyBanHang
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(146, 41);
+            this.txtUserName.Location = new System.Drawing.Point(117, 41);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(172, 20);
             this.txtUserName.TabIndex = 14;
             // 
             // txtStaffId
             // 
-            this.txtStaffId.Location = new System.Drawing.Point(146, 15);
+            this.txtStaffId.Location = new System.Drawing.Point(117, 15);
             this.txtStaffId.Name = "txtStaffId";
             this.txtStaffId.Size = new System.Drawing.Size(88, 20);
             this.txtStaffId.TabIndex = 13;
@@ -210,32 +214,32 @@ namespace QuanLyBanHang
             // rdoManage
             // 
             this.rdoManage.AutoSize = true;
+            this.rdoManage.Checked = true;
             this.rdoManage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoManage.Location = new System.Drawing.Point(236, 71);
+            this.rdoManage.Location = new System.Drawing.Point(117, 71);
             this.rdoManage.Name = "rdoManage";
             this.rdoManage.Size = new System.Drawing.Size(76, 20);
             this.rdoManage.TabIndex = 12;
+            this.rdoManage.TabStop = true;
             this.rdoManage.Text = "Manage";
             this.rdoManage.UseVisualStyleBackColor = true;
             // 
-            // rdStaff
+            // rdoSalesman
             // 
-            this.rdStaff.AutoSize = true;
-            this.rdStaff.Checked = true;
-            this.rdStaff.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdStaff.Location = new System.Drawing.Point(146, 71);
-            this.rdStaff.Name = "rdStaff";
-            this.rdStaff.Size = new System.Drawing.Size(49, 20);
-            this.rdStaff.TabIndex = 11;
-            this.rdStaff.TabStop = true;
-            this.rdStaff.Text = "Staff";
-            this.rdStaff.UseVisualStyleBackColor = true;
+            this.rdoSalesman.AutoSize = true;
+            this.rdoSalesman.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoSalesman.Location = new System.Drawing.Point(225, 71);
+            this.rdoSalesman.Name = "rdoSalesman";
+            this.rdoSalesman.Size = new System.Drawing.Size(82, 20);
+            this.rdoSalesman.TabIndex = 11;
+            this.rdoSalesman.Text = "Salesman";
+            this.rdoSalesman.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(350, 42);
+            this.label4.Location = new System.Drawing.Point(357, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 16);
@@ -246,7 +250,7 @@ namespace QuanLyBanHang
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(351, 16);
+            this.label2.Location = new System.Drawing.Point(357, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 16);
@@ -301,6 +305,28 @@ namespace QuanLyBanHang
             this.dtgvAccount.TabIndex = 1;
             this.dtgvAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellContentClick);
             // 
+            // rdoAccountant
+            // 
+            this.rdoAccountant.AutoSize = true;
+            this.rdoAccountant.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoAccountant.Location = new System.Drawing.Point(117, 98);
+            this.rdoAccountant.Name = "rdoAccountant";
+            this.rdoAccountant.Size = new System.Drawing.Size(94, 20);
+            this.rdoAccountant.TabIndex = 24;
+            this.rdoAccountant.Text = "Accountant";
+            this.rdoAccountant.UseVisualStyleBackColor = true;
+            // 
+            // radoStocker
+            // 
+            this.radoStocker.AutoSize = true;
+            this.radoStocker.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radoStocker.Location = new System.Drawing.Point(225, 97);
+            this.radoStocker.Name = "radoStocker";
+            this.radoStocker.Size = new System.Drawing.Size(70, 20);
+            this.radoStocker.TabIndex = 25;
+            this.radoStocker.Text = "Stocker";
+            this.radoStocker.UseVisualStyleBackColor = true;
+            // 
             // UserAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,7 +349,7 @@ namespace QuanLyBanHang
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdoManage;
-        private System.Windows.Forms.RadioButton rdStaff;
+        private System.Windows.Forms.RadioButton rdoSalesman;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
@@ -339,5 +365,7 @@ namespace QuanLyBanHang
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
+        private System.Windows.Forms.RadioButton radoStocker;
+        private System.Windows.Forms.RadioButton rdoAccountant;
     }
 }

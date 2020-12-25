@@ -41,5 +41,9 @@ namespace QuanLyBanHang.DAO
             }
             return listBillInfo;
         }
+        public DataTable ListBillById(int id)
+        {
+            return DataProvider.Instance.ExecuteQuery("USP_ListBillInfo @idBill ", new object[] { id });
+        }
     }
 }

@@ -72,3 +72,5 @@ D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\bin\Debu
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.BUS.UserStaff.resources
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csprojAssemblyReference.cache
 D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.BUS.fPayment.resources
+D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csproj.ResolveComReference.cache
+D:\Tài liệu\C#\QLBH_BTL_C#\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.GUI.fBillInfo.resources

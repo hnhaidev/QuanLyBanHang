@@ -138,5 +138,6 @@ namespace QuanLyBanHang.DAO
         {
             return DataProvider.Instance.ExecuteQuery("USP_SearchBillByDay @seacrh", new object[] { search });
         }
+        
     }
 }

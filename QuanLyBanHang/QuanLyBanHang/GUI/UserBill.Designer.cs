@@ -30,14 +30,16 @@ namespace QuanLyBanHang
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrintToExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtpSearch = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.labelSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgrBill = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrBill)).BeginInit();
@@ -46,6 +48,7 @@ namespace QuanLyBanHang
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnPrintToExcel);
             this.panel1.Controls.Add(this.btnRefesh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtpSearch);
@@ -58,6 +61,48 @@ namespace QuanLyBanHang
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(743, 78);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPrintToExcel
+            // 
+            this.btnPrintToExcel.CheckedState.Parent = this.btnPrintToExcel;
+            this.btnPrintToExcel.CustomImages.Parent = this.btnPrintToExcel;
+            this.btnPrintToExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnPrintToExcel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnPrintToExcel.ForeColor = System.Drawing.Color.White;
+            this.btnPrintToExcel.HoverState.Parent = this.btnPrintToExcel;
+            this.btnPrintToExcel.Location = new System.Drawing.Point(463, 47);
+            this.btnPrintToExcel.Name = "btnPrintToExcel";
+            this.btnPrintToExcel.ShadowDecoration.Parent = this.btnPrintToExcel;
+            this.btnPrintToExcel.Size = new System.Drawing.Size(81, 21);
+            this.btnPrintToExcel.TabIndex = 22;
+            this.btnPrintToExcel.Text = "Print To Excel";
+            this.btnPrintToExcel.Click += new System.EventHandler(this.btnPrintToExcel_Click);
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
+            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
+            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRefesh.ForeColor = System.Drawing.Color.White;
+            this.btnRefesh.HoverState.Parent = this.btnRefesh;
+            this.btnRefesh.Location = new System.Drawing.Point(310, 47);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
+            this.btnRefesh.Size = new System.Drawing.Size(60, 21);
+            this.btnRefesh.TabIndex = 21;
+            this.btnRefesh.Text = "Refesh";
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(578, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Search: Date Of Purchase";
             // 
             // dtpSearch
             // 
@@ -123,32 +168,11 @@ namespace QuanLyBanHang
             this.dtgrBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgrBill.Size = new System.Drawing.Size(743, 349);
             this.dtgrBill.TabIndex = 0;
+            this.dtgrBill.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrBill_CellContentDoubleClick);
             // 
-            // label1
+            // saveFileDialog1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(578, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 16);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Search: Date Of Purchase";
-            // 
-            // btnRefesh
-            // 
-            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
-            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
-            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
-            this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(364, 47);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
-            this.btnRefesh.Size = new System.Drawing.Size(60, 21);
-            this.btnRefesh.TabIndex = 21;
-            this.btnRefesh.Text = "Refesh";
-            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            this.saveFileDialog1.Filter = "Excel 2003|*.xls|Excel 2007|*.xlsx|Excel 2010|*.xlsx";
             // 
             // UserBill
             // 
@@ -177,5 +201,7 @@ namespace QuanLyBanHang
         private System.Windows.Forms.DateTimePicker dtpSearch;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
+        private Guna.UI2.WinForms.Guna2Button btnPrintToExcel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

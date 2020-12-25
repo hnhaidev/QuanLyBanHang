@@ -81,5 +81,10 @@ namespace QuanLyBanHang.DAO
             string query = string.Format("exec USP_SearchAccount N'{0}'", name);
             return DataProvider.Instance.ExecuteQuery(query);
         }
+        public bool CheckByStaffId(int id)
+        {
+            string query = string.Format("select * from Account where staffID = {0}", id);
+            return DataProvider.Instance.ExecuteQuery(query).Rows.Count > 0;
+        }
     }
 }

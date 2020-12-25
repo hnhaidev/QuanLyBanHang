@@ -33,13 +33,22 @@ namespace QuanLyBanHang
 
             txtUserName.Text = dtgvAccount.Rows[row].Cells["Tên Tài Khoản"].Value.ToString();
             txtStaffId.Text = dtgvAccount.Rows[row].Cells["Mã Nhân Viên"].Value.ToString();
-            if (Convert.ToBoolean(dtgvAccount.Rows[row].Cells["Quản Lý"].Value) == true)
+            int accountType = Convert.ToInt32(dtgvAccount.Rows[row].Cells["Loại Tài Khoản"].Value.ToString());
+            if (accountType == 0)
             {
                 rdoManage.Checked = true;
             }
-            else
+            else if (accountType == 1)
             {
-                rdStaff.Checked = true;
+                rdoSalesman.Checked = true;
+            }
+            else if (accountType == 2)
+            {
+                rdoAccountant.Checked = true;
+            }
+            else if (accountType == 3)
+            {
+                radoStocker.Checked = true;
             }
         }
 
@@ -65,14 +74,6 @@ namespace QuanLyBanHang
             {
                 MessageBox.Show("Vui lòng Refesh để nhập tên tài khoản khác !");
             }
-            else if (txtUserName.Text.Trim().Length < 1)
-            {
-                MessageBox.Show("Vui lòng nhập tên tài khoản !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (AccountDAO.Instance.GetListAccountByName(txtUserName.Text).Rows.Count > 0)
-            {
-                MessageBox.Show("Tên tài khoản đã tồn tại !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else
             {
                 int staffId = (int)Convert.ToInt32(txtStaffId.Text);
@@ -81,17 +82,37 @@ namespace QuanLyBanHang
                 int accountType = 0;
                 if (rdoManage.Checked == true)
                 {
+                    accountType = 0;
+                }
+                else if(rdoSalesman.Checked ==  true)
+                {
                     accountType = 1;
                 }
-                else
+                else if (rdoAccountant.Checked == true)
                 {
-                    accountType = 0;
+                    accountType = 2;
+                }
+                else if (radoStocker.Checked == true)
+                {
+                    accountType = 3;
                 }
 
                 // Kiểm tra nhập
                 if (txtStaffId.Text.Trim().Length < 1)
                 {
                     MessageBox.Show("Vui lòng nhập Mã nhân viên !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (AccountDAO.Instance.CheckByStaffId(Convert.ToInt32(txtStaffId.Text)))
+                {
+                    MessageBox.Show("Nhân viên này đã có tài khoản!", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtUserName.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("Vui lòng nhập tên tài khoản !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (AccountDAO.Instance.GetListAccountByName(txtUserName.Text).Rows.Count > 0)
+                {
+                    MessageBox.Show("Tên tài khoản đã tồn tại !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (txtPassWord.Text.Trim().Length < 1)
                 {
@@ -136,11 +157,19 @@ namespace QuanLyBanHang
                     int accountType = 0;
                     if (rdoManage.Checked == true)
                     {
+                        accountType = 0;
+                    }
+                    else if (rdoSalesman.Checked == true)
+                    {
                         accountType = 1;
                     }
-                    else
+                    else if (rdoAccountant.Checked == true)
                     {
-                        accountType = 0;
+                        accountType = 2;
+                    }
+                    else if (radoStocker.Checked == true)
+                    {
+                        accountType = 3;
                     }
 
                     // Kiểm tra nhập
