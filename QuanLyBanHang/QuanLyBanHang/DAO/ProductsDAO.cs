@@ -58,7 +58,7 @@ namespace QuanLyBanHang.DAO
         }
         public bool DeleteProduct(int productId)
         {
-            string query = string.Format("delete Product where productId"+ productId);
+            string query = string.Format("delete Product where productId = {0}", productId);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

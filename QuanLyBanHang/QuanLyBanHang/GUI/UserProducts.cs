@@ -57,7 +57,7 @@ namespace QuanLyBanHang
             int productTypeId = (cbbProductType.SelectedItem as ProductType).ProductTypeId;
             float productPrice = (float)Convert.ToDouble(txtPrice.Text);
             int productAmount = (int)nmudProductAmount.Value;
-            if(txtProductId.Text.Trim().Length < 1)
+            if(txtProductId.Text.Trim().Length > 0)
             {
                 MessageBox.Show("Vui lòng refesh để thực hiện chức năng này !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -94,7 +94,7 @@ namespace QuanLyBanHang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(txtProductId.Text.Trim().Length < 1)
+            if(txtProductId.Text.Trim().Length > 1)
             {
                 int productId = Convert.ToInt32(txtProductId.Text);
                 string productName = txtProductName.Text;
@@ -139,7 +139,7 @@ namespace QuanLyBanHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductId.Text.Trim().Length < 1)
+            if (txtProductId.Text.Trim().Length > 1)
             {
                 int productId = Convert.ToInt32(txtProductId.Text);
                 DeleteProduct(productId);
