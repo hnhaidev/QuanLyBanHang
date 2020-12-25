@@ -113,7 +113,6 @@ namespace QuanLyBanHang.BUS
 
                 }
 
-                MessageBox.Show("In thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
         }
@@ -122,7 +121,7 @@ namespace QuanLyBanHang.BUS
         {
             //--------------------------------------------//
             string lbtenshop = "Cửa Hàng Điện Máy NGUYỄN KIM";
-            string lbdiachi = "Q9";
+            string lbdiachi = "99 Lê Văn Việt, P.Tăng Nhơn Phú A, Quận 9, Hồ Chí Minh, Thành phố Hồ Chí Minh";
             string lbSDT = "01010101";
 
             double cash = double.Parse(txtClientMoney.Text);
@@ -146,7 +145,7 @@ namespace QuanLyBanHang.BUS
             graphic.DrawString(lbSDT, font, new SolidBrush(Color.Black), startX, 60);
 
             offset = offset + 50;
-            string top = "Sản phẩm".PadRight(21) + "SL".PadRight(10) + "Giá".PadRight(10);
+            string top = "Sản phẩm".PadRight(21) + "Số Lượng".PadRight(10) + "Giá".PadRight(10);
             graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight; //make the spacing consistent
             graphic.DrawString("------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);

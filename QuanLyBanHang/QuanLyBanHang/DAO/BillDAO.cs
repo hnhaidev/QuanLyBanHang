@@ -128,7 +128,7 @@ namespace QuanLyBanHang.DAO
         public DataTable TotalPayProductByDay()
         {
             string CurrentMonth = DateTime.Now.ToString("MM");
-            return DataProvider.Instance.ExecuteQuery("SELECT CAST(Bill.billDate AS DATE) AS Ngay, sum(cast(BillInfo.amount as int) ) as slsp FROM Bill, BillInfo where MONTH(Bill.billDate) = '" + CurrentMonth + "' group by CAST(Bill.billDate AS DATE)");
+            return DataProvider.Instance.ExecuteQuery("SELECT CAST(Bill.billDate AS DATE) AS Ngay, sum(cast(BillInfo.amount as int) ) as slsp FROM Bill, BillInfo where Bill.billId = BillInfo.billId AND MONTH(Bill.billDate) = '" + CurrentMonth + "' group by CAST(Bill.billDate AS DATE)");
         }
         public DataTable SearchBill(string search)
         {

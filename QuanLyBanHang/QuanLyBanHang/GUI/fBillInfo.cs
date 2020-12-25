@@ -61,7 +61,7 @@ namespace QuanLyBanHang.GUI
         {
             //--------------------------------------------//
             string lbtenshop = "Cửa Hàng Điện Máy NGUYỄN KIM";
-            string lbdiachi = "Q9";
+            string lbdiachi = "99 Lê Văn Việt, P.Tăng Nhơn Phú A, Quận 9, Hồ Chí Minh, Thành phố Hồ Chí Minh";
             string lbSDT = "01010101";
 
             //double cash = double.Parse(lbSumMoney.Text);
