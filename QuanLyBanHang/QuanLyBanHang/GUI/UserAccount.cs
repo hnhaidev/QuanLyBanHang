@@ -187,6 +187,8 @@ namespace QuanLyBanHang
                     }
                     else
                     {
+                        txtPassWord.Text = "";
+                        txtReconfirmPW.Text = "";
                         UpdateAccount(staffId, userName, passWord, accountType);
                     }
                 }
@@ -212,14 +214,21 @@ namespace QuanLyBanHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(txtUserName.Enabled == false)
+            if(txtUserName.Enabled == true)
             {
-                string userName = txtUserName.Text;
-                DeleteAccount(userName);
+                MessageBox.Show("Vui lòng chọn tài khoản cần xóa !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(txtUserName.Text == fLogin.userNames)
+            {
+                MessageBox.Show("Không được xóa tài khoản đang đăng nhập !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn tài khoản cần xóa !");
+                txtPassWord.Text = "";
+                txtReconfirmPW.Text = "";
+
+                string userName = txtUserName.Text;
+                DeleteAccount(userName);
             }
         }
         void DeleteAccount(string userName)

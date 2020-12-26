@@ -216,6 +216,7 @@ namespace QuanLyBanHang
             this.ClientSize = new System.Drawing.Size(268, 330);
             this.Controls.Add(this.pnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

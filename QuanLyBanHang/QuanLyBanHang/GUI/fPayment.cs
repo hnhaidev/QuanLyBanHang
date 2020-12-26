@@ -123,6 +123,8 @@ namespace QuanLyBanHang.BUS
             string lbtenshop = "Cửa Hàng Điện Máy NGUYỄN KIM";
             string lbdiachi = "99 Lê Văn Việt, P.Tăng Nhơn Phú A, Quận 9, Hồ Chí Minh, Thành phố Hồ Chí Minh";
             string lbSDT = "01010101";
+            double Percent = UserShopping.Percent;
+            double DisCount = UserShopping.DisCount;
 
             double cash = double.Parse(txtClientMoney.Text);
             double change = 0;
@@ -187,6 +189,20 @@ namespace QuanLyBanHang.BUS
 
             graphic.DrawString("Tổng cộng ".PadRight(30) + totalprice.ToString("###,###"), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + 30; //make some room so that the total stands out.
+            if(Percent == 0 && DisCount == 0)
+            {
+                // Không chạy gì hết
+            }
+            else if(Percent == 0)
+            {
+                graphic.DrawString("Giảm Tiền".PadRight(30) + DisCount.ToString("###,###"), font, new SolidBrush(Color.Black), startX, startY + offset);
+                offset = offset + 15;
+            }
+            else
+            {
+                graphic.DrawString("Giảm %".PadRight(30) + Percent.ToString("###,###"), font, new SolidBrush(Color.Black), startX, startY + offset);
+                offset = offset + 15;
+            }
             graphic.DrawString("Tiền khách đưa ".PadRight(30) + cash.ToString("###,###"), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + 15;
             graphic.DrawString("Tiền thối lại ".PadRight(30) + change.ToString("###,###"), font, new SolidBrush(Color.Black), startX, startY + offset);

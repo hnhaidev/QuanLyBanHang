@@ -31,17 +31,17 @@ namespace QuanLyBanHang.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBillInfo));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbSumMoney = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpBuyDay = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbClientName = new System.Windows.Forms.Label();
+            this.lbStaffName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.dtgrvListBillInfo = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbStaffName = new System.Windows.Forms.Label();
-            this.lbClientName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpBuyDay = new System.Windows.Forms.DateTimePicker();
-            this.lbSumMoney = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrvListBillInfo)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,82 @@ namespace QuanLyBanHang.GUI
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(643, 370);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // lbSumMoney
+            // 
+            this.lbSumMoney.AutoSize = true;
+            this.lbSumMoney.Location = new System.Drawing.Point(292, 16);
+            this.lbSumMoney.Name = "lbSumMoney";
+            this.lbSumMoney.Size = new System.Drawing.Size(13, 13);
+            this.lbSumMoney.TabIndex = 37;
+            this.lbSumMoney.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(218, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Sum Money: ";
+            // 
+            // dtpBuyDay
+            // 
+            this.dtpBuyDay.Enabled = false;
+            this.dtpBuyDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBuyDay.Location = new System.Drawing.Point(295, 40);
+            this.dtpBuyDay.Name = "dtpBuyDay";
+            this.dtpBuyDay.Size = new System.Drawing.Size(96, 20);
+            this.dtpBuyDay.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(231, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 15);
+            this.label3.TabIndex = 34;
+            this.label3.Text = " Buy Day:";
+            // 
+            // lbClientName
+            // 
+            this.lbClientName.AutoSize = true;
+            this.lbClientName.Location = new System.Drawing.Point(97, 42);
+            this.lbClientName.Name = "lbClientName";
+            this.lbClientName.Size = new System.Drawing.Size(35, 13);
+            this.lbClientName.TabIndex = 33;
+            this.lbClientName.Text = "Name";
+            // 
+            // lbStaffName
+            // 
+            this.lbStaffName.AutoSize = true;
+            this.lbStaffName.Location = new System.Drawing.Point(97, 16);
+            this.lbStaffName.Name = "lbStaffName";
+            this.lbStaffName.Size = new System.Drawing.Size(35, 13);
+            this.lbStaffName.TabIndex = 32;
+            this.lbStaffName.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 15);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Client Name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 15);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Staff Name: ";
             // 
             // btnClose
             // 
@@ -113,82 +189,6 @@ namespace QuanLyBanHang.GUI
             this.dtgrvListBillInfo.Size = new System.Drawing.Size(619, 283);
             this.dtgrvListBillInfo.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 15);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Staff Name: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 15);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Client Name:";
-            // 
-            // lbStaffName
-            // 
-            this.lbStaffName.AutoSize = true;
-            this.lbStaffName.Location = new System.Drawing.Point(97, 16);
-            this.lbStaffName.Name = "lbStaffName";
-            this.lbStaffName.Size = new System.Drawing.Size(35, 13);
-            this.lbStaffName.TabIndex = 32;
-            this.lbStaffName.Text = "Name";
-            // 
-            // lbClientName
-            // 
-            this.lbClientName.AutoSize = true;
-            this.lbClientName.Location = new System.Drawing.Point(97, 42);
-            this.lbClientName.Name = "lbClientName";
-            this.lbClientName.Size = new System.Drawing.Size(35, 13);
-            this.lbClientName.TabIndex = 33;
-            this.lbClientName.Text = "Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(231, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 15);
-            this.label3.TabIndex = 34;
-            this.label3.Text = " Buy Day:";
-            // 
-            // dtpBuyDay
-            // 
-            this.dtpBuyDay.Enabled = false;
-            this.dtpBuyDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBuyDay.Location = new System.Drawing.Point(295, 40);
-            this.dtpBuyDay.Name = "dtpBuyDay";
-            this.dtpBuyDay.Size = new System.Drawing.Size(96, 20);
-            this.dtpBuyDay.TabIndex = 35;
-            // 
-            // lbSumMoney
-            // 
-            this.lbSumMoney.AutoSize = true;
-            this.lbSumMoney.Location = new System.Drawing.Point(292, 16);
-            this.lbSumMoney.Name = "lbSumMoney";
-            this.lbSumMoney.Size = new System.Drawing.Size(13, 13);
-            this.lbSumMoney.TabIndex = 37;
-            this.lbSumMoney.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(218, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 15);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Sum Money: ";
-            // 
             // fBillInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +196,7 @@ namespace QuanLyBanHang.GUI
             this.ClientSize = new System.Drawing.Size(643, 370);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fBillInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fBillInfo";

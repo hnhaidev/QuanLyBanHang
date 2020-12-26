@@ -31,6 +31,11 @@ namespace QuanLyBanHang
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvProductInfo = new System.Windows.Forms.DataGridView();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.nmudAmout = new System.Windows.Forms.NumericUpDown();
@@ -66,11 +71,7 @@ namespace QuanLyBanHang
             this.txtPercent = new System.Windows.Forms.TextBox();
             this.txtSumPrice = new System.Windows.Forms.TextBox();
             this.SumPrice = new System.Windows.Forms.Label();
-            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductInfo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -104,8 +105,39 @@ namespace QuanLyBanHang
             this.dtgvProductInfo.Location = new System.Drawing.Point(0, 0);
             this.dtgvProductInfo.Name = "dtgvProductInfo";
             this.dtgvProductInfo.ReadOnly = true;
+            this.dtgvProductInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvProductInfo.Size = new System.Drawing.Size(743, 214);
             this.dtgvProductInfo.TabIndex = 0;
+            // 
+            // productId
+            // 
+            this.productId.HeaderText = "Product ID";
+            this.productId.Name = "productId";
+            this.productId.ReadOnly = true;
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Product Name";
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // salePrice
+            // 
+            this.salePrice.HeaderText = "Into Money";
+            this.salePrice.Name = "salePrice";
+            this.salePrice.ReadOnly = true;
             // 
             // panel4
             // 
@@ -336,7 +368,7 @@ namespace QuanLyBanHang
             this.btnRefesh.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
             this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(504, 379);
+            this.btnRefesh.Location = new System.Drawing.Point(636, 348);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
             this.btnRefesh.Size = new System.Drawing.Size(90, 21);
@@ -352,10 +384,10 @@ namespace QuanLyBanHang
             this.btnPay.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.HoverState.Parent = this.btnPay;
-            this.btnPay.Location = new System.Drawing.Point(636, 379);
+            this.btnPay.Location = new System.Drawing.Point(569, 384);
             this.btnPay.Name = "btnPay";
             this.btnPay.ShadowDecoration.Parent = this.btnPay;
-            this.btnPay.Size = new System.Drawing.Size(90, 21);
+            this.btnPay.Size = new System.Drawing.Size(90, 40);
             this.btnPay.TabIndex = 19;
             this.btnPay.Text = "Pay";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -509,40 +541,27 @@ namespace QuanLyBanHang
             this.SumPrice.TabIndex = 22;
             this.SumPrice.Text = "Sum Price:";
             // 
-            // productId
+            // btnDeleteProduct
             // 
-            this.productId.HeaderText = "Product ID";
-            this.productId.Name = "productId";
-            this.productId.ReadOnly = true;
-            // 
-            // productName
-            // 
-            this.productName.HeaderText = "Product Name";
-            this.productName.Name = "productName";
-            this.productName.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // salePrice
-            // 
-            this.salePrice.HeaderText = "Into Money";
-            this.salePrice.Name = "salePrice";
-            this.salePrice.ReadOnly = true;
+            this.btnDeleteProduct.CheckedState.Parent = this.btnDeleteProduct;
+            this.btnDeleteProduct.CustomImages.Parent = this.btnDeleteProduct;
+            this.btnDeleteProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteProduct.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteProduct.HoverState.Parent = this.btnDeleteProduct;
+            this.btnDeleteProduct.Location = new System.Drawing.Point(504, 348);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.ShadowDecoration.Parent = this.btnDeleteProduct;
+            this.btnDeleteProduct.Size = new System.Drawing.Size(90, 21);
+            this.btnDeleteProduct.TabIndex = 21;
+            this.btnDeleteProduct.Text = "Delete Product";
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // UserShopping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnRefesh);
@@ -607,5 +626,6 @@ namespace QuanLyBanHang
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn salePrice;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteProduct;
     }
 }

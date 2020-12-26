@@ -50,11 +50,6 @@ namespace QuanLyBanHang
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnExit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtUserName = new System.Windows.Forms.Label();
-            this.txtTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.userStaff1 = new QuanLyBanHang.BUS.UserStaff();
             this.userShopping1 = new QuanLyBanHang.UserShopping();
             this.userStatistical1 = new QuanLyBanHang.UserStatistical();
@@ -62,6 +57,11 @@ namespace QuanLyBanHang
             this.userBill1 = new QuanLyBanHang.UserBill();
             this.userAccount1 = new QuanLyBanHang.UserAccount();
             this.userHome1 = new QuanLyBanHang.UserHome();
+            this.btnExit = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUserName = new System.Windows.Forms.Label();
+            this.txtTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -343,6 +343,55 @@ namespace QuanLyBanHang
             this.panel5.Size = new System.Drawing.Size(743, 433);
             this.panel5.TabIndex = 9;
             // 
+            // userStaff1
+            // 
+            this.userStaff1.Location = new System.Drawing.Point(0, -2);
+            this.userStaff1.Name = "userStaff1";
+            this.userStaff1.Size = new System.Drawing.Size(743, 433);
+            this.userStaff1.TabIndex = 7;
+            // 
+            // userShopping1
+            // 
+            this.userShopping1.Location = new System.Drawing.Point(0, -2);
+            this.userShopping1.Name = "userShopping1";
+            this.userShopping1.Size = new System.Drawing.Size(743, 433);
+            this.userShopping1.TabIndex = 6;
+            // 
+            // userStatistical1
+            // 
+            this.userStatistical1.Location = new System.Drawing.Point(0, 0);
+            this.userStatistical1.Name = "userStatistical1";
+            this.userStatistical1.Size = new System.Drawing.Size(743, 433);
+            this.userStatistical1.TabIndex = 5;
+            // 
+            // userProducts1
+            // 
+            this.userProducts1.Location = new System.Drawing.Point(0, -3);
+            this.userProducts1.Name = "userProducts1";
+            this.userProducts1.Size = new System.Drawing.Size(743, 433);
+            this.userProducts1.TabIndex = 4;
+            // 
+            // userBill1
+            // 
+            this.userBill1.Location = new System.Drawing.Point(0, 0);
+            this.userBill1.Name = "userBill1";
+            this.userBill1.Size = new System.Drawing.Size(743, 433);
+            this.userBill1.TabIndex = 3;
+            // 
+            // userAccount1
+            // 
+            this.userAccount1.Location = new System.Drawing.Point(0, -2);
+            this.userAccount1.Name = "userAccount1";
+            this.userAccount1.Size = new System.Drawing.Size(743, 433);
+            this.userAccount1.TabIndex = 1;
+            // 
+            // userHome1
+            // 
+            this.userHome1.Location = new System.Drawing.Point(0, -3);
+            this.userHome1.Name = "userHome1";
+            this.userHome1.Size = new System.Drawing.Size(743, 433);
+            this.userHome1.TabIndex = 0;
+            // 
             // btnExit
             // 
             this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
@@ -401,55 +450,6 @@ namespace QuanLyBanHang
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // userStaff1
-            // 
-            this.userStaff1.Location = new System.Drawing.Point(0, -2);
-            this.userStaff1.Name = "userStaff1";
-            this.userStaff1.Size = new System.Drawing.Size(743, 433);
-            this.userStaff1.TabIndex = 7;
-            // 
-            // userShopping1
-            // 
-            this.userShopping1.Location = new System.Drawing.Point(0, -2);
-            this.userShopping1.Name = "userShopping1";
-            this.userShopping1.Size = new System.Drawing.Size(743, 433);
-            this.userShopping1.TabIndex = 6;
-            // 
-            // userStatistical1
-            // 
-            this.userStatistical1.Location = new System.Drawing.Point(0, 0);
-            this.userStatistical1.Name = "userStatistical1";
-            this.userStatistical1.Size = new System.Drawing.Size(743, 433);
-            this.userStatistical1.TabIndex = 5;
-            // 
-            // userProducts1
-            // 
-            this.userProducts1.Location = new System.Drawing.Point(0, -3);
-            this.userProducts1.Name = "userProducts1";
-            this.userProducts1.Size = new System.Drawing.Size(743, 433);
-            this.userProducts1.TabIndex = 4;
-            // 
-            // userBill1
-            // 
-            this.userBill1.Location = new System.Drawing.Point(0, 0);
-            this.userBill1.Name = "userBill1";
-            this.userBill1.Size = new System.Drawing.Size(743, 433);
-            this.userBill1.TabIndex = 3;
-            // 
-            // userAccount1
-            // 
-            this.userAccount1.Location = new System.Drawing.Point(0, -2);
-            this.userAccount1.Name = "userAccount1";
-            this.userAccount1.Size = new System.Drawing.Size(743, 433);
-            this.userAccount1.TabIndex = 1;
-            // 
-            // userHome1
-            // 
-            this.userHome1.Location = new System.Drawing.Point(0, -3);
-            this.userHome1.Name = "userHome1";
-            this.userHome1.Size = new System.Drawing.Size(743, 433);
-            this.userHome1.TabIndex = 0;
-            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +467,7 @@ namespace QuanLyBanHang
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMain";

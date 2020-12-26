@@ -23,7 +23,9 @@ namespace QuanLyBanHang.DAO
         public bool Login(string userName, string passWord)
         {
             string hashPass = MaHoaMD5(passWord);
+
             string query = "USP_Login @userName , @passWord ";
+
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, hashPass });
             return result.Rows.Count > 0;
         }
@@ -58,8 +60,9 @@ namespace QuanLyBanHang.DAO
         }
         public bool InserAccount(int staffId, string userName, string passWord, int accountType)
         {
+            string hashPass = MaHoaMD5(passWord);
             string query = string.Format("insert Account ( staffId , userName , passWord , accountType ) " +
-                "values ( N'{0}' , N'{1}' , N'{2}' , N'{3}' )", staffId , userName , passWord, accountType );
+                "values ( N'{0}' , N'{1}' , N'{2}' , N'{3}' )", staffId , userName , hashPass, accountType );
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

@@ -94,7 +94,7 @@ namespace QuanLyBanHang
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(txtProductId.Text.Trim().Length > 1)
+            if(txtProductId.Text.Trim().Length > 0)
             {
                 int productId = Convert.ToInt32(txtProductId.Text);
                 string productName = txtProductName.Text;
@@ -139,7 +139,7 @@ namespace QuanLyBanHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductId.Text.Trim().Length > 1)
+            if (txtProductId.Text.Trim().Length > 0)
             {
                 int productId = Convert.ToInt32(txtProductId.Text);
                 DeleteProduct(productId);

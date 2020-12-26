@@ -16,6 +16,8 @@ namespace QuanLyBanHang
     public partial class UserShopping : UserControl
     {
         public static double payment;
+        public static double DisCount;
+        public static double Percent;
         public UserShopping()
         {
             InitializeComponent();
@@ -285,6 +287,21 @@ namespace QuanLyBanHang
                 int amount;
                 int staffId = fLogin.staffID;
                 string phoneClient = txtClinetPhone.Text;
+                if(txtPercent.Enabled == true && txtDisCount.Enabled == true)
+                {
+                    DisCount = 0;
+                    Percent = 0;
+                }
+                else if(txtPercent.Enabled == false)
+                {
+                    DisCount = double.Parse(txtDisCount.Text);
+                    Percent = 0;
+                }
+                else if(txtDisCount.Enabled == false)
+                {
+                    Percent = double.Parse(txtPercent.Text);
+                    DisCount = 0;
+                }
 
                 BillDAO.Instance.InsertBill(phoneClient, staffId);
 
@@ -340,6 +357,18 @@ namespace QuanLyBanHang
 
             dtgvProductInfo.Rows.Clear();
             dtgvProductInfo.Refresh();
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            if (this.dtgvProductInfo.SelectedRows.Count > 0)
+            {
+                dtgvProductInfo.Rows.RemoveAt(this.dtgvProductInfo.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
