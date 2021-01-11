@@ -1,1 +1,6 @@
 # QuanLyBanHang
+Ứng dụng quản lý bản hàng được viết trên ngôn ngữ c#.
+- Theo mô hình 3 layer.
+- Gồm quản lý : Tài khoản, Nhân viên, Sản Phẩn, Bill , Thống kê,...
+- Những chức năng sẽ được phân quyền theo từng công việc khác nhau
+- ...
